@@ -1,0 +1,36 @@
+{
+  "title": "동네 도서관 야간 개관",
+  "digest": {
+    "summary": "구립 도서관 세 곳이 다음 달부터 평일 밤 10시까지 문을 연다. 야간에는 열람실과 자료 대출만 운영한다.",
+    "facts": [
+      {"statement": "다음 달부터 구립 도서관 3곳이 평일 밤 10시까지 연다", "condition": "", "status": "확정·시행"},
+      {"statement": "야간에는 열람실과 자료 대출만 운영한다", "condition": "", "status": "확정·시행"},
+      {"statement": "야간 운영 인력 6명을 새로 뽑는다", "condition": "", "status": "계획·목표"}
+    ]
+  },
+  "target": {"who": "도서관을 이용하는 주민"},
+  "cards": {
+    "c1": {"id": "c1", "name": "야간 안전", "interest": "밤늦게 오가는 길의 안전", "ask_form": "가로등이나 순찰은 늘리나?",
+           "freq": 5, "stance_lean": {"lean": "조건부"}, "arg_types": ["안전"],
+           "premises": [{"premise": "도서관 앞 골목은 밤에 어둡다", "scope": "범위 미상", "time": "원글 날짜 미상"}],
+           "sources": [{"kind": "시민 의견", "platform": "cafe"}]},
+    "c2": {"id": "c2", "name": "직장인 이용", "interest": "퇴근 뒤에도 책을 빌릴 수 있는지", "ask_form": "주말 연장도 하나?",
+           "freq": 8, "stance_lean": {"lean": "찬성"}, "arg_types": ["편의"], "premises": [], "sources": [{"kind": "시민 의견", "platform": "blog"}]},
+    "c3": {"id": "c3", "name": "예산 우선순위", "interest": "도서관보다 급한 동네 예산", "ask_form": "인건비는 얼마나 드나?",
+           "freq": 3, "stance_lean": {"lean": "반대"}, "arg_types": ["재정"], "premises": [], "sources": [{"kind": "시민 의견", "platform": "cafe"}]},
+    "c4": {"id": "c4", "name": "수험생 자리", "interest": "시험 기간 열람실 자리 경쟁", "ask_form": "좌석 예약제를 하나?",
+           "freq": 6, "stance_lean": {"lean": "찬성"}, "arg_types": ["편의"], "perspective": "학생", "require": ["student"],
+           "premises": [], "sources": [{"kind": "시민 의견", "platform": "cafe"}]}
+  },
+  "relevance": {"c1": "related", "c2": "direct", "c3": "related", "c4": "direct"},
+  "personas": [
+    {"name": "마포", "me": "40대 직장인, 회사가 멀어 퇴근이 늦다", "personality": "말수가 적지만 할 말은 한다", "stage": "맞벌이 · 초등학생 자녀 하나",
+     "kids": "딸 하나(초3)", "relation": "퇴근 뒤 도서관을 쓰고 싶었다", "short_self": "40대 직장인 · 맞벌이", "score": 3, "lean": 0.4},
+    {"name": "은평", "me": "70대, 은퇴하고 혼자 산다", "personality": "걱정이 많은 편", "stage": "혼자 산다 · 은퇴",
+     "short_self": "70대 · 혼자 산다", "score": 1, "lean": -0.35, "steady": true},
+    {"name": "서대문", "me": "고2 학생", "student_level": "고2", "situation": ["student"], "perspectives": ["학생"],
+     "stage": "고등학교 2학년", "score": 2, "lean": 0.2},
+    {"name": "용산", "me": "30대 자영업자, 동네에서 카페를 한다", "personality": "사교적이다", "living": "도서관 근처 골목에서 가게를 한다",
+     "short_self": "30대 자영업", "score": 1, "lean": null}
+  ]
+}

@@ -1,0 +1,9 @@
+sarangbang
+Copyright 2026 Team Chunpung (춘풍팀)
+
+This product was developed as part of the minsim (민심) education-policy simulation project.
+
+tests/data_nemotron_sample.json contains six synthetic rows (selected columns) from
+"Nemotron-Personas-Korea — Augmented for Korean Policy Simulation" (Team Chunpung, 2026),
+https://huggingface.co/datasets/springwindteam/nemotron-personas-korea-augmented,
+derived from NVIDIA Nemotron-Personas-Korea. Licensed under CC BY 4.0.

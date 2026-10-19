@@ -1,0 +1,37 @@
+[project]
+name = "sarangbang"
+version = "0.1.0"
+description = "Korean group-chat (단톡방) public-opinion simulation engine for LLM personas"
+readme = "README.md"
+license = "Apache-2.0"
+authors = [{ name = "Team Chunpung (춘풍팀)" }]
+license-files = ["LICENSE", "NOTICE"]
+requires-python = ">=3.10"
+dependencies = ["httpx>=0.27"]
+keywords = ["llm", "simulation", "agent-based", "korean", "public-opinion"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Natural Language :: Korean",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.5"]
+
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/sarangbang"]
+
+[tool.ruff]
+line-length = 140
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "B", "I", "UP"]
+ignore = ["E501", "B023", "B905"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
