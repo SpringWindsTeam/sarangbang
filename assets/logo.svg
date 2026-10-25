@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="사랑방 sarangbang">
+  <title>사랑방 sarangbang</title>
+  <desc>한옥 기와지붕 아래 한지색 말풍선, 그 안에 서로 다른 시민 셋 — 한국어 단톡방 여론 시뮬레이션</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2A4C82"/>
+      <stop offset="1" stop-color="#121F3A"/>
+    </linearGradient>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4C5768"/>
+      <stop offset="1" stop-color="#2B3340"/>
+    </linearGradient>
+  </defs>
+  <!-- 바탕 -->
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <!-- 말풍선 (한지색) -->
+  <rect x="124" y="216" width="264" height="156" rx="38" fill="#F7F0E1"/>
+  <path d="M182 366 Q172 404 152 422 Q204 402 240 366 Z" fill="#F7F0E1"/>
+  <!-- 기와지붕: 용마루(위 직선) · 양쪽으로 처지며 내려와 끝이 들리는 처마 · 가운데가 처지는 처마선 -->
+  <path d="M178 132 L334 132
+           Q396 196 468 200
+           Q256 262 44 200
+           Q116 196 178 132 Z"
+        fill="url(#tile)" stroke="#F7F0E1" stroke-width="8" stroke-linejoin="round"/>
+  <!-- 처마 끝 막새 띠 -->
+  <path d="M74 206 Q256 250 438 206" fill="none" stroke="#E2A93B" stroke-width="6" stroke-linecap="round"/>
+  <!-- 시민 셋 -->
+  <circle cx="190" cy="292" r="22" fill="#27477A"/>
+  <circle cx="256" cy="292" r="22" fill="#C8553D"/>
+  <circle cx="322" cy="292" r="22" fill="#3C8D5A"/>
+  <!-- 대화 중 -->
+  <circle cx="228" cy="336" r="5" fill="#27477A" opacity="0.35"/>
+  <circle cx="256" cy="336" r="5" fill="#27477A" opacity="0.35"/>
+  <circle cx="284" cy="336" r="5" fill="#27477A" opacity="0.35"/>
+</svg>

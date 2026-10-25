@@ -2,6 +2,8 @@
 
 <div align="center">
 
+<img src="assets/logo.svg" width="112" alt="사랑방 sarangbang 로고">
+
 # 사랑방 sarangbang
 
 **한국어 단톡방 여론 시뮬레이션 엔진**
@@ -642,6 +644,7 @@ src/sarangbang/
 ├── specs/         ko_generic.json · ko_s12.json
 └── data/          toy_library.json (내장 시나리오)
 docs/              korean-ai-providers.md (국산 AI 가이드) · release.md (배포 절차)
+assets/            logo.svg (아이콘)
 examples/          quickstart.py · nemotron_korea.py · cafe_price.json
 tests/             pytest (네트워크 없음)
 .github/           CI · 릴리스 워크플로 · 이슈/PR 템플릿

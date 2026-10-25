@@ -2,6 +2,8 @@
 
 <div align="center">
 
+<img src="assets/logo.svg" width="112" alt="sarangbang logo">
+
 # 사랑방 sarangbang
 
 **Korean group-chat public-opinion simulation engine for LLM personas**
