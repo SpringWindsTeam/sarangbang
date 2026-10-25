@@ -1,38 +1,21 @@
-"""sarangbang 빠른 시작 — 장난감 정책 하나·시민 4명·카드 4장으로 방 하나를 돌린다.
+"""sarangbang 빠른 시작 — 내장 시나리오(동네 도서관 야간 개관 · 시민 4명 · 카드 4장)로 방 하나를 돌린다.
 
-    python examples/quickstart.py --fake            # 네트워크 없이(정해 둔 답으로) 흐름만 확인
-    python examples/quickstart.py --fake --topic policy   # 정책 주제 문구(ko_s12)로
-    SARANGBANG_BASE_URL=https://…/v1 SARANGBANG_API_KEY=… SARANGBANG_MODEL=… python examples/quickstart.py
+    python examples/quickstart.py --fake                 # 네트워크 없이(정해 둔 답으로) 흐름만 확인
+    python examples/quickstart.py --fake --topic policy  # 정책 주제 문구(ko_s12)로
+    SARANGBANG_PROVIDER=upstage UPSTAGE_API_KEY=… python examples/quickstart.py --msgs 30
+    SARANGBANG_BASE_URL=http://localhost:8000/v1 SARANGBANG_MODEL=skt/A.X-4.0-Light python examples/quickstart.py
 
+같은 일을 `sarangbang quickstart --fake` 명령으로도 할 수 있다. 이 파일은 라이브러리 API를 직접 쓰는 본보기다.
 실제 모델이면 첫 메시지도 LLM(material.seed_message)이 쓴다. --fake면 고정 문장.
 """
 from __future__ import annotations
 
 import argparse
 import asyncio
-import itertools
 import json
-import os
-from pathlib import Path
 
-from sarangbang import (
-    GENERIC_KO,
-    POLICY_KO,
-    DictAdapter,
-    FakeLane,
-    JsonLLM,
-    Lane,
-    Room,
-    allocate,
-    build_room,
-    hearsay_fill,
-    kept,
-    load_spec,
-    run_rooms,
-)
-from sarangbang import material as M
-
-HERE = Path(__file__).resolve().parent
+from sarangbang import json_llm_from_env, lane_from_env, load_scenario, run_rooms
+from sarangbang import scenario as S
 
 
 def main() -> None:
@@ -41,37 +24,19 @@ def main() -> None:
     ap.add_argument("--msgs", type=int, default=20)
     ap.add_argument("--topic", choices=["generic", "policy"], default="generic", help="주제 문구: 범용 소식 | 정책(ko_s12)")
     a = ap.parse_args()
-    d = json.loads((HERE / "toy_policy.json").read_text(encoding="utf-8"))
-    topic, spec = (POLICY_KO, load_spec("ko_s12")) if a.topic == "policy" else (GENERIC_KO, load_spec("ko_generic"))
-    ad = DictAdapter()
-    ps, cards, rel = d["personas"], d["cards"], d["relevance"]
-    names = ad.display_names(ps)
-    keep = kept(rel, cards)
-    given = hearsay_fill(allocate(keep, ps, 1, rel, ad), keep, rel)
-    prompts = build_room(ps, names, adapter=ad, digest=d["digest"], target=d["target"], given=given, cards_by=cards,
-                         leans=[p.get("lean") for p in ps], spec=spec, topic=topic)
-    sharer = max(range(len(ps)), key=lambda i: (ad.static_score(ps[i], d["target"]), -i))
 
+    d = load_scenario("toy_library")                 # 또는 load_scenario("my_scenario.json")
+    prep = S.prepare(d, topic=a.topic)               # 카드 배분 → 시민별 프롬프트(LLM 없음)
     if a.fake:
-        lines = itertools.cycle(["밤 10시까지면 퇴근하고 들를 수 있겠네요", "(#1에 답장) 골목이 어두워서 걱정이에요", "(넘어감)",
-                                 "시험 기간에 자리 잡기 좀 쉬워지려나요", "인건비는 어디서 나오는지 궁금하네요"])
-        lane = FakeLane("base", lambda messages: next(lines), slots=2)
-        lanes = {"base": lane}
-        share = "다음 달부터 구립 도서관이 밤 10시까지 연다네요~^^ 퇴근하고 갈 수 있겠어요"
+        lanes = {"base": S.fake_lane(slots=2)}
+        share = S.seed_share(d, prep, None)          # 고정 첫 메시지
     else:
-        base, key, model = os.environ["SARANGBANG_BASE_URL"], os.environ["SARANGBANG_API_KEY"], os.environ["SARANGBANG_MODEL"]
-        lanes = {"base": Lane.openai("base", base, key, model, slots=2)}
-        share = M.seed_message(JsonLLM.openai(base, key, model), d["title"], d["digest"], ad.seed_profile(ps[sharer], d["target"]), topic=topic)
+        lanes = {"base": lane_from_env("base")}      # SARANGBANG_PROVIDER 또는 SARANGBANG_BASE_URL·API_KEY·MODEL
+        share = S.seed_share(d, prep, json_llm_from_env())
+    room = S.make_room(d, prep, share, target_msgs=a.msgs)
 
-    room = Room("r1", ps, names, prompts, d["target"], {"author": sharer, "text": share}, target_msgs=a.msgs,
-                scorer=ad.static_score, topic=topic)
-
-    def show(r: Room, m: dict) -> None:
-        rep = f"(#{m['reply_to']}에 답장) " if m.get("reply_to") else ""
-        print(f"#{m['id']:>3} {m['vt']['time']} {r.names[m['author']]}: {rep}{m['text']}")
-
-    print(f"#  1 {room.msgs[0]['vt']['time']} {names[sharer]}: {share}")
-    stats = asyncio.run(run_rooms([room], lanes, on_message=show))
+    print(S.format_line(room, room.msgs[0]))
+    stats = asyncio.run(run_rooms([room], lanes, on_message=lambda r, m: print(S.format_line(r, m))))
     print(json.dumps(stats, ensure_ascii=False))
 
 

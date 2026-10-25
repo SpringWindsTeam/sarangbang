@@ -22,6 +22,9 @@ from __future__ import annotations
 import re
 from typing import Any
 
+DATASET = "springwindteam/nemotron-personas-korea-augmented"
+ROWS_API = "https://datasets-server.huggingface.co/rows"
+
 _PROVINCE_FULL = {"충청북": "충북", "충청남": "충남", "전라북": "전북", "전라남": "전남", "경상북": "경북", "경상남": "경남"}
 
 
@@ -155,3 +158,27 @@ class NemotronKoreaAdapter:
                 cand, k = f"{n}{k}", k + 1
             out.append(cand)
         return out
+
+
+def load_rows(n: int, skip: int = 0, province: str | None = None, *, where: dict | None = None, timeout: float = 60.0) -> list[dict]:
+    """Hugging Face 데이터셋 뷰어 API(/rows, 한 번에 100행)로 --skip 위치부터 n명을 읽는다(전체 parquet을 내려받지 않는다).
+
+    province="서울"처럼 시도를 고르거나 where={"has_children": True}처럼 열 값으로 거른다(둘 다 읽은 행 안에서 거른다 —
+    조건이 드물면 skip·n을 넉넉히). 대규모·무작위 표집은 parquet을 내려받아 pandas·polars로 고르는 편이 낫다."""
+    import httpx
+
+    out: list[dict] = []
+    off = skip
+    cond = dict(where or {})
+    if province:
+        cond["province"] = province
+    with httpx.Client(timeout=timeout) as c:
+        while len(out) < n:
+            r = c.get(ROWS_API, params={"dataset": DATASET, "config": "default", "split": "train", "offset": off, "length": 100})
+            r.raise_for_status()
+            rows = [x["row"] for x in r.json().get("rows") or []]
+            if not rows:
+                break
+            out += [x for x in rows if _match(x, cond)]
+            off += len(rows)
+    return out[:n]

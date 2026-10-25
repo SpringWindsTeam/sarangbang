@@ -1,0 +1,30 @@
+{
+  "title": "단골 카페 가격 인상",
+  "topic": "generic",
+  "room_name": "동네 카페 모임",
+  "room_desc": "같은 동네에서 몇 년째 같은 카페를 다니며 알게 된 사람들의 단톡방이라 서로 편하게 이야기한다",
+  "digest": {
+    "summary": "동네 카페가 다음 주부터 아메리카노를 4,000원에서 4,500원으로 올린다. 사장님이 원두값과 임대료 인상을 이유로 들었다.",
+    "facts": [
+      {"statement": "다음 주 월요일부터 아메리카노가 4,000원에서 4,500원으로 오른다", "condition": "", "status": "확정·시행"},
+      {"statement": "텀블러를 가져오면 300원을 깎아 준다", "condition": "", "status": "확정·시행"},
+      {"statement": "원두를 바꾸는 것도 검토 중이라고 했다", "condition": "", "status": "검토 중"}
+    ]
+  },
+  "target": {"who": "카페 단골"},
+  "cards": {
+    "c1": {"id": "c1", "name": "텀블러 할인", "interest": "텀블러 할인이 얼마나 도움이 되는지", "ask_form": "할인은 계속 하나?",
+           "freq": 4, "stance_lean": {"lean": "조건부"}, "arg_types": ["편의"], "premises": [], "sources": [{"kind": "시민 의견", "platform": "cafe"}]},
+    "c2": {"id": "c2", "name": "동네 물가", "interest": "동네 가게들이 줄줄이 값을 올리는 것", "ask_form": "다른 가게도 올리나?",
+           "freq": 6, "stance_lean": {"lean": "반대"}, "arg_types": ["재정"], "premises": [], "sources": [{"kind": "시민 의견", "platform": "blog"}]},
+    "c3": {"id": "c3", "name": "가게 사정", "interest": "작은 가게가 버틸 수 있을지", "ask_form": "임대료가 얼마나 올랐나?",
+           "freq": 3, "stance_lean": {"lean": "찬성"}, "arg_types": ["재정"], "premises": [], "sources": [{"kind": "시민 의견", "platform": "cafe"}]}
+  },
+  "relevance": {"c1": "direct", "c2": "related", "c3": "direct"},
+  "personas": [
+    {"name": "하늘", "me": "30대 직장인, 출근길에 매일 아메리카노를 산다", "personality": "계산이 빠르다", "short_self": "30대 직장인", "score": 3, "lean": -0.4},
+    {"name": "바다", "me": "50대, 근처에서 작은 문구점을 한다", "personality": "남의 사정을 잘 헤아린다", "living": "같은 골목에서 가게를 한다", "short_self": "50대 자영업", "score": 2, "lean": 0.3},
+    {"name": "들", "me": "20대 대학생, 카페에서 과제를 한다", "student_level": "대학생", "situation": ["student"], "stage": "대학교 3학년", "short_self": "20대 대학생", "score": 2, "lean": null},
+    {"name": "숲", "me": "60대 은퇴자, 아침마다 신문을 들고 카페에 간다", "personality": "느긋하다", "stage": "은퇴 · 부부", "short_self": "60대 은퇴", "score": 1, "lean": null, "steady": true}
+  ]
+}

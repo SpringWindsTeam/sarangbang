@@ -1,29 +1,64 @@
-[project]
-name = "sarangbang"
-version = "0.1.0"
-description = "Korean group-chat (단톡방) public-opinion simulation engine for LLM personas"
-readme = "README.md"
-license = "Apache-2.0"
-authors = [{ name = "Team Chunpung (춘풍팀)" }]
-license-files = ["LICENSE", "NOTICE"]
-requires-python = ">=3.10"
-dependencies = ["httpx>=0.27"]
-keywords = ["llm", "simulation", "agent-based", "korean", "public-opinion"]
-classifiers = [
-    "Programming Language :: Python :: 3",
-    "Natural Language :: Korean",
-    "Topic :: Scientific/Engineering :: Artificial Intelligence",
-]
-
-[project.optional-dependencies]
-dev = ["pytest>=8", "ruff>=0.5"]
-
 [build-system]
 requires = ["hatchling>=1.26"]
 build-backend = "hatchling.build"
 
+[project]
+name = "sarangbang"
+dynamic = ["version"]
+description = "한국어 단톡방 여론 시뮬레이션 엔진 — Korean group-chat (단톡방) public-opinion simulation for LLM personas"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+authors = [{ name = "Team Chunpung (춘풍팀)", email = "spring.wind.team@gmail.com" }]
+maintainers = [{ name = "Team Chunpung (춘풍팀)", email = "spring.wind.team@gmail.com" }]
+requires-python = ">=3.10"
+dependencies = ["httpx>=0.27"]
+keywords = [
+    "llm", "simulation", "agent-based-modeling", "social-simulation", "public-opinion", "persona", "group-chat",
+    "korean", "exaone", "a.x", "hyperclova", "solar", "kanana",
+    "여론", "시뮬레이션", "단톡방", "페르소나", "한국어", "국산AI",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Natural Language :: Korean",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Sociology",
+    "Typing :: Typed",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.5", "build>=1.2", "twine>=5"]
+
+[project.scripts]
+sarangbang = "sarangbang.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/springwindteam/sarangbang"
+Repository = "https://github.com/springwindteam/sarangbang"
+Issues = "https://github.com/springwindteam/sarangbang/issues"
+Changelog = "https://github.com/springwindteam/sarangbang/blob/main/CHANGELOG.md"
+"Korean AI providers guide" = "https://github.com/springwindteam/sarangbang/blob/main/docs/korean-ai-providers.md"
+"Persona dataset" = "https://huggingface.co/datasets/springwindteam/nemotron-personas-korea-augmented"
+
+[tool.hatch.version]
+path = "src/sarangbang/__init__.py"
+
 [tool.hatch.build.targets.wheel]
 packages = ["src/sarangbang"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/sarangbang", "tests", "examples", "docs", "README.md", "README.en.md", "LICENSE", "NOTICE", "CHANGELOG.md", "CITATION.cff"]
 
 [tool.ruff]
 line-length = 140
@@ -35,3 +70,4 @@ ignore = ["E501", "B023", "B905"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+addopts = "-ra"

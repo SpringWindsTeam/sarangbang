@@ -1,9 +1,8 @@
 import json
-from pathlib import Path
 
-from sarangbang import DictAdapter, allocate, build_room, hearsay_fill, kept, load_spec
+from sarangbang import DictAdapter, allocate, build_room, hearsay_fill, kept, load_scenario, load_spec
 
-TOY = json.loads((Path(__file__).resolve().parents[1] / "examples" / "toy_policy.json").read_text(encoding="utf-8"))
+TOY = load_scenario("toy_library")
 
 
 def _given():

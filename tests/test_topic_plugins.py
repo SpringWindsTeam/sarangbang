@@ -1,7 +1,5 @@
 import asyncio
-import json
 from dataclasses import replace
-from pathlib import Path
 
 from sarangbang import (
     GENERIC_KO,
@@ -12,12 +10,13 @@ from sarangbang import (
     Room,
     StaticSections,
     build_room,
+    load_scenario,
     load_spec,
     run_rooms,
 )
 from sarangbang import material as M
 
-TOY = json.loads((Path(__file__).resolve().parents[1] / "examples" / "toy_policy.json").read_text(encoding="utf-8"))
+TOY = load_scenario("toy_library")
 
 
 def _build(**kw):

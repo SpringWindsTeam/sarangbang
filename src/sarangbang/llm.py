@@ -5,6 +5,7 @@
 - `FakeLane`: 시험·예제용 — 정해 둔 함수로 답한다(네트워크 없음).
 
 매 호출은 system + user 두 메시지의 독립 호출이다(모델 쪽 기억 없음).
+제공처별 프리셋(주소·키 환경 변수·그 서버가 받는 표본 추출 인자)은 providers.py에 있다 — `get_provider("upstage").lane(...)`.
 """
 from __future__ import annotations
 
@@ -34,6 +35,7 @@ class Lane:
     timeout: float = 180.0
     extra: dict = field(default_factory=dict)   # 요청 본문에 덧붙일 값(SAMPLING을 덮어쓴다)
     sampling: dict = field(default_factory=lambda: dict(SAMPLING))
+    headers: dict = field(default_factory=dict)  # 요청 헤더에 덧붙일 값(예: OpenRouter의 HTTP-Referer)
 
     @classmethod
     def openai(cls, name: str, base_url: str, key: str, model: str, *, label: str | None = None, **kw) -> Lane:
@@ -44,7 +46,7 @@ class Lane:
         """→ {ok, content, latency, retries} 또는 {ok: False, error, latency}. 일시 오류(429·5xx)는 6번까지(4·8·12…초),
         그 밖의 예외는 3번까지 다시 시도한다."""
         body = {"model": self.model, "messages": messages, "max_tokens": max_tokens, **self.sampling, **self.extra}
-        headers = {"Authorization": f"Bearer {self.key}", "Content-Type": "application/json"}
+        headers = {"Authorization": f"Bearer {self.key}", "Content-Type": "application/json", **self.headers}
         t0 = time.time()
         last = ""
         for k in range(6):
@@ -92,6 +94,7 @@ class JsonLLM:
     timeout: float = 180.0
     attempts: int = 6
     extra: dict = field(default_factory=lambda: {"chat_template_kwargs": {"enable_thinking": False}})
+    headers: dict = field(default_factory=dict)
 
     @classmethod
     def openai(cls, base_url: str, key: str, model: str, **kw) -> JsonLLM:
@@ -108,7 +111,7 @@ class JsonLLM:
             t0 = time.time()
             try:
                 with httpx.Client(timeout=self.timeout) as c:
-                    r = c.post(self.url, json=body, headers={"Content-Type": "application/json", "Authorization": f"Bearer {self.key}"})
+                    r = c.post(self.url, json=body, headers={"Content-Type": "application/json", "Authorization": f"Bearer {self.key}", **self.headers})
                 r.raise_for_status()
                 txt = r.json()["choices"][0]["message"]["content"] or ""
                 m = re.search(r"\{.*\}", txt, re.DOTALL)
