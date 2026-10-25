@@ -9,7 +9,7 @@
 [![PyPI](https://img.shields.io/pypi/v/sarangbang.svg)](https://pypi.org/project/sarangbang/)
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue)](pyproject.toml)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
-[![CI](https://github.com/springwindteam/sarangbang/actions/workflows/ci.yml/badge.svg)](https://github.com/springwindteam/sarangbang/actions/workflows/ci.yml)
+[![CI](https://github.com/SpringWindsTeam/sarangbang/actions/workflows/ci.yml/badge.svg)](https://github.com/SpringWindsTeam/sarangbang/actions/workflows/ci.yml)
 [![Dataset](https://img.shields.io/badge/🤗%20dataset-Nemotron--Personas--Korea%20augmented-yellow)](https://huggingface.co/datasets/springwindteam/nemotron-personas-korea-augmented)
 
 </div>

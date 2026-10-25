@@ -105,7 +105,7 @@ sarangbang doctor --provider clova --model HCX-DASH-002
 | 모델 | `upstage/solar-pro4` · `upstage/solar-mini4` · `upstage/solar-pro-3` (2026-10 기준 국산 모델은 Solar 계열) |
 | 문서 | https://openrouter.ai/models?q=upstage |
 
-OpenRouter는 앱 식별 헤더를 권장합니다: `lane(headers={"HTTP-Referer": "https://github.com/springwindteam/sarangbang", "X-Title": "sarangbang"})`.
+OpenRouter는 앱 식별 헤더를 권장합니다: `lane(headers={"HTTP-Referer": "https://github.com/SpringWindsTeam/sarangbang", "X-Title": "sarangbang"})`.
 
 ### Hugging Face Inference Providers
 

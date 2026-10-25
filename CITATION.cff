@@ -5,7 +5,7 @@ type: software
 authors:
   - name: "Team Chunpung (춘풍팀)"
     email: spring.wind.team@gmail.com
-repository-code: "https://github.com/springwindteam/sarangbang"
+repository-code: "https://github.com/SpringWindsTeam/sarangbang"
 license: Apache-2.0
 version: 0.2.0
 date-released: 2026-10-25

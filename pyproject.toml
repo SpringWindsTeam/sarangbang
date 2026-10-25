@@ -44,11 +44,11 @@ dev = ["pytest>=8", "ruff>=0.5", "build>=1.2", "twine>=5"]
 sarangbang = "sarangbang.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/springwindteam/sarangbang"
-Repository = "https://github.com/springwindteam/sarangbang"
-Issues = "https://github.com/springwindteam/sarangbang/issues"
-Changelog = "https://github.com/springwindteam/sarangbang/blob/main/CHANGELOG.md"
-"Korean AI providers guide" = "https://github.com/springwindteam/sarangbang/blob/main/docs/korean-ai-providers.md"
+Homepage = "https://github.com/SpringWindsTeam/sarangbang"
+Repository = "https://github.com/SpringWindsTeam/sarangbang"
+Issues = "https://github.com/SpringWindsTeam/sarangbang/issues"
+Changelog = "https://github.com/SpringWindsTeam/sarangbang/blob/main/CHANGELOG.md"
+"Korean AI providers guide" = "https://github.com/SpringWindsTeam/sarangbang/blob/main/docs/korean-ai-providers.md"
 "Persona dataset" = "https://huggingface.co/datasets/springwindteam/nemotron-personas-korea-augmented"
 
 [tool.hatch.version]

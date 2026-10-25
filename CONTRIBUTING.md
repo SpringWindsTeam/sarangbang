@@ -5,7 +5,7 @@ sarangbang에 관심을 가져 주셔서 고맙습니다. 버그 보고, 국산 
 ## 개발 환경
 
 ```bash
-git clone https://github.com/springwindteam/sarangbang.git
+git clone https://github.com/SpringWindsTeam/sarangbang.git
 cd sarangbang
 python -m venv .venv && source .venv/bin/activate     # 또는 uv venv && source .venv/bin/activate
 pip install -e ".[dev]"

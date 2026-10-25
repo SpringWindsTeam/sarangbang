@@ -10,7 +10,7 @@ API 토큰 없이 GitHub Actions가 PyPI에 올리도록 합니다(OIDC).
    | 항목 | 값 |
    |---|---|
    | PyPI project name | `sarangbang` |
-   | Owner | `springwindteam` (조직으로 옮겼으면 조직 이름) |
+   | Owner | `SpringWindsTeam` |
    | Repository name | `sarangbang` |
    | Workflow name | `release.yml` |
    | Environment name | `pypi` |
@@ -49,8 +49,8 @@ pip install --upgrade sarangbang && sarangbang --version
 ## PyPI 없이 설치하는 법 (사용자 안내용)
 
 ```bash
-pip install git+https://github.com/springwindteam/sarangbang.git@v0.2.0
-pip install https://github.com/springwindteam/sarangbang/releases/download/v0.2.0/sarangbang-0.2.0-py3-none-any.whl
+pip install git+https://github.com/SpringWindsTeam/sarangbang.git@v0.2.0
+pip install https://github.com/SpringWindsTeam/sarangbang/releases/download/v0.2.0/sarangbang-0.2.0-py3-none-any.whl
 ```
 
 ## TestPyPI로 먼저 시험하려면

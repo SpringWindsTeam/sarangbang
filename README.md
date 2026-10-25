@@ -12,7 +12,7 @@
 [![PyPI](https://img.shields.io/pypi/v/sarangbang.svg)](https://pypi.org/project/sarangbang/)
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue)](pyproject.toml)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
-[![CI](https://github.com/springwindteam/sarangbang/actions/workflows/ci.yml/badge.svg)](https://github.com/springwindteam/sarangbang/actions/workflows/ci.yml)
+[![CI](https://github.com/SpringWindsTeam/sarangbang/actions/workflows/ci.yml/badge.svg)](https://github.com/SpringWindsTeam/sarangbang/actions/workflows/ci.yml)
 [![Dataset](https://img.shields.io/badge/🤗%20dataset-Nemotron--Personas--Korea%20증강판-yellow)](https://huggingface.co/datasets/springwindteam/nemotron-personas-korea-augmented)
 ![Dependencies](https://img.shields.io/badge/dependencies-httpx-lightgrey)
 
@@ -64,8 +64,8 @@ pip install sarangbang                       # Python 3.10+, 런타임 의존성
 ```
 
 ```bash
-pip install git+https://github.com/springwindteam/sarangbang.git     # 최신 main
-git clone https://github.com/springwindteam/sarangbang.git && cd sarangbang && pip install -e ".[dev]"   # 개발
+pip install git+https://github.com/SpringWindsTeam/sarangbang.git     # 최신 main
+git clone https://github.com/SpringWindsTeam/sarangbang.git && cd sarangbang && pip install -e ".[dev]"   # 개발
 ```
 
 ## 30초 체험
@@ -662,7 +662,7 @@ tests/             pytest (네트워크 없음)
   author = {{Team Chunpung (춘풍팀)}},
   title  = {sarangbang: Korean group-chat public-opinion simulation engine for LLM personas},
   year   = {2026},
-  url    = {https://github.com/springwindteam/sarangbang}
+  url    = {https://github.com/SpringWindsTeam/sarangbang}
 }
 ```
 

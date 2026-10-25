@@ -18,7 +18,7 @@ sarangbang은 사용자가 지정한 OpenAI 호환 엔드포인트로 HTTP 요�
 
 ### 보고 채널
 
-- GitHub Private Vulnerability Report: https://github.com/springwindteam/sarangbang/security/advisories/new
+- GitHub Private Vulnerability Report: https://github.com/SpringWindsTeam/sarangbang/security/advisories/new
 - 이메일: spring.wind.team@gmail.com (제목에 `[sarangbang security]`)
 
 ### 포함하면 좋은 것
