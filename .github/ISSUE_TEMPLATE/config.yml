@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 질문 · 아이디어 (Discussions)
+    url: https://github.com/springwindteam/sarangbang/discussions
+    about: 사용법 질문, 시뮬레이션 설계 상담, 결과 공유는 토론 게시판으로
+  - name: 보안 취약점 보고
+    url: https://github.com/springwindteam/sarangbang/security/advisories/new
+    about: API 키 노출 등 보안 문제는 공개 이슈 대신 비공개로
+  - name: 페르소나 데이터셋 (Hugging Face)
+    url: https://huggingface.co/datasets/springwindteam/nemotron-personas-korea-augmented
+    about: Nemotron-Personas-Korea 증강판 데이터 자체에 대한 문의는 데이터셋 토론으로

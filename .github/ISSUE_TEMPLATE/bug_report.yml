@@ -1,0 +1,50 @@
+name: 버그 리포트 (Bug Report)
+description: 엔진 오류, 응답 정리(clean_reply) 오작동, CLI 크래시 등
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        API 키, 내부 서버 주소, 실제 사람의 데이터는 붙여넣지 마세요. 대화 표본은 합성 페르소나로 재구성해 주세요.
+  - type: input
+    id: version
+    attributes:
+      label: sarangbang 버전
+      description: "`sarangbang --version` 또는 `python -c 'import sarangbang; print(sarangbang.__version__)'`"
+      placeholder: "0.2.0"
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: Python / OS
+      placeholder: "3.12 / macOS 15"
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: 모델과 제공처
+      description: 예) upstage solar-pro4, vLLM + skt/A.X-4.0-Light, Ollama exaone3.5:7.8b, --fake
+      placeholder: "vLLM 0.14 + LGAI-EXAONE/EXAONE-4.5-33B"
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 재현 절차
+      description: 명령어 또는 최소 코드. `sarangbang run … --out run.json`의 관련 부분이 있으면 함께.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 기대 동작
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 실제 동작 (출력 / 에러 전체)
+    validations:
+      required: true

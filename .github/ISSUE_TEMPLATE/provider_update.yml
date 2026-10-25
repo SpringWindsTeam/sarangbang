@@ -1,0 +1,35 @@
+name: 국산 모델 제공처 정보 갱신 (Provider Update)
+description: 주소·모델 이름·지원 인자·라이선스가 바뀌었거나 새 제공처·모델이 나왔을 때
+title: "[provider] "
+labels: ["provider"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        `sarangbang providers` · `sarangbang models` 출력과 [docs/korean-ai-providers.md](../../docs/korean-ai-providers.md)의 내용이
+        실제와 다르면 알려 주세요. 공식 문서 링크가 있으면 빠르게 반영할 수 있습니다.
+  - type: input
+    id: provider
+    attributes:
+      label: 제공처 / 모델
+      placeholder: "clova HCX-007 · LGAI-EXAONE/EXAONE-5.0"
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: 무엇이 바뀌었나요?
+      description: 주소, 모델 이름, 지원하지 않는 인자(예: presence_penalty), 라이선스, 가격·제공 종료 등
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: 근거 (공식 문서·모델 카드 링크)
+    validations:
+      required: true
+  - type: textarea
+    id: doctor
+    attributes:
+      label: "`sarangbang doctor` 출력 (키는 지우고)"
+      render: text

@@ -1,0 +1,43 @@
+name: 사양 문구 변경 제안 (Prompt Spec Change)
+description: ko_s12 · ko_generic · Scene 규칙 · Topic 문구를 바꾸는 제안 — 비교 실험 결과와 함께
+title: "[spec] "
+labels: ["prompt-spec"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        문구 하나가 화제 수렴·지어냄·남의 말 옮김을 크게 바꿉니다. 같은 조건에서 전후를 비교한 결과를 적어 주세요.
+        기본값을 바꾸기보다 새 사양 파일(`specs/<이름>.json`)을 추가하는 쪽을 먼저 생각해 주세요.
+  - type: input
+    id: where
+    attributes:
+      label: 바꾸려는 곳
+      placeholder: "ko_generic.closing · scene.rules · POLICY_KO.stance_heads"
+    validations:
+      required: true
+  - type: textarea
+    id: diff
+    attributes:
+      label: 전 → 후 문구
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: conditions
+    attributes:
+      label: 비교 조건
+      description: 주제, 시민 수, 메시지 수, 모델(제공처·버전), 반복 횟수
+    validations:
+      required: true
+  - type: textarea
+    id: metrics
+    attributes:
+      label: 판정 기준과 결과
+      description: 무엇을 어떻게 셌는지(고른 화제 수, 지어낸 신상 비율, 같은 문장 반복 등)와 전후 수치
+    validations:
+      required: true
+  - type: textarea
+    id: samples
+    attributes:
+      label: 대화 표본 (합성 페르소나만)
+      render: text
