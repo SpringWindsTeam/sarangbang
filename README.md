@@ -1,3 +1,5 @@
+[English](README.en.md) | **한국어**
+
 <div align="center">
 
 # 사랑방 sarangbang
@@ -7,31 +9,40 @@
 가상의 시민들이 정책, 제품, 동네 소식 같은 주제를 두고 대화하는 과정을 시뮬레이션합니다.<br>
 대화 기록을 통해 시민별 관심사와 주요 쟁점, 의견 차이를 살펴볼 수 있습니다.
 
-찬반 입장을 미리 정하지 않아도 시민의 배경과 관심사, 대화 맥락을 바탕으로 시뮬레이션할 수 있습니다.
-필요하면 외부에서 계산한 찬반 성향을 시민별로 지정할 수도 있습니다.
-
-LG AI Research의 [EXAONE](https://huggingface.co/LGAI-EXAONE)과 SK텔레콤의 [A.X(에이닷 엑스)](https://sktelecom.github.io/en/project/axllm/)를 사용하는 한국어 시뮬레이션을 위해 개발했습니다.
-두 모델로 테스트하면서 발언 반복, 근거 없는 내용 생성, 응답 형식 오류를 줄이도록 프롬프트와 후처리를 조정했습니다.
-
-춘풍팀이 함께 공개한 [Nemotron-Personas-Korea 증강판](https://huggingface.co/datasets/springwindteam/nemotron-personas-korea-augmented)을 시민 데이터로 사용할 수 있습니다. 한국인 100만 명의 가상 인물 정보가 담긴 데이터셋이며, CC BY 4.0 라이선스로 제공합니다.
-
+[![PyPI](https://img.shields.io/pypi/v/sarangbang.svg)](https://pypi.org/project/sarangbang/)
+[![Python](https://img.shields.io/badge/python-3.10%2B-blue)](pyproject.toml)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
-![Python](https://img.shields.io/badge/python-3.10%2B-blue)
+[![CI](https://github.com/springwindteam/sarangbang/actions/workflows/ci.yml/badge.svg)](https://github.com/springwindteam/sarangbang/actions/workflows/ci.yml)
+[![Dataset](https://img.shields.io/badge/🤗%20dataset-Nemotron--Personas--Korea%20증강판-yellow)](https://huggingface.co/datasets/springwindteam/nemotron-personas-korea-augmented)
 ![Dependencies](https://img.shields.io/badge/dependencies-httpx-lightgrey)
 
-[빠른 시작](#빠른-시작) · [핵심 개념](#핵심-개념) · [프롬프트 설정](#프롬프트-설정-json) · [주제 설정](#주제-설정-topic) · [프롬프트 추가](#프롬프트-추가-promptplugin) · [English](#english)
+[설치](#설치) · [30초 체험](#30초-체험) · [국산 AI 연결](#국산-ai-모델-연결하기) · [핵심 개념](#핵심-개념) · [시나리오 파일](#시나리오-파일) · [명령줄 도구](#명령줄-도구)
 
 </div>
 
 ---
 
+찬반 입장을 미리 정하지 않아도 시민의 배경과 관심사, 대화 맥락을 바탕으로 시뮬레이션할 수 있습니다.
+필요하면 외부에서 계산한 찬반 성향을 시민별로 지정할 수도 있습니다.
+
+LG AI Research의 [EXAONE](https://huggingface.co/LGAI-EXAONE)과 SK텔레콤의 [A.X(에이닷 엑스)](https://huggingface.co/skt)를 사용하는 한국어 시뮬레이션을 위해 개발했습니다.
+두 모델로 테스트하면서 발언 반복, 근거 없는 내용 생성, 응답 형식 오류를 줄이도록 프롬프트와 후처리를 조정했습니다.
+0.2부터는 업스테이지 Solar·네이버 HyperCLOVA X 같은 국내 API, FriendliAI·OpenRouter 같은 중개 플랫폼, vLLM·Ollama로 직접 띄운
+오픈 웨이트(K-EXAONE·A.X K2·Solar Open·HyperCLOVA X SEED·Kanana·믿:음 …)를 **프리셋 하나로 바꿔 가며** 쓸 수 있습니다.
+
+춘풍팀이 함께 공개한 [Nemotron-Personas-Korea 증강판](https://huggingface.co/datasets/springwindteam/nemotron-personas-korea-augmented)을 시민 데이터로 사용할 수 있습니다. 한국인 100만 명의 가상 인물 정보가 담긴 데이터셋이며, CC BY 4.0 라이선스로 제공합니다.
+
 ## 목차
 
+- [설치](#설치)
+- [30초 체험](#30초-체험)
+- [국산 AI 모델 연결하기](#국산-ai-모델-연결하기)
 - [설계 배경](#설계-배경)
 - [특징](#특징)
-- [빠른 시작](#빠른-시작)
 - [동작 방식](#동작-방식)
 - [핵심 개념](#핵심-개념)
+- [시나리오 파일](#시나리오-파일)
+- [명령줄 도구](#명령줄-도구)
 - [프롬프트 설정 JSON](#프롬프트-설정-json)
 - [주제 설정 (Topic)](#주제-설정-topic)
 - [프롬프트 추가 (PromptPlugin)](#프롬프트-추가-promptplugin)
@@ -43,7 +54,71 @@ LG AI Research의 [EXAONE](https://huggingface.co/LGAI-EXAONE)과 SK텔레콤의
 - [자주 묻는 질문](#자주-묻는-질문)
 - [저장소 구조](#저장소-구조)
 - [기여하기](#기여하기)
+- [인용](#인용)
 - [라이선스](#라이선스)
+
+## 설치
+
+```bash
+pip install sarangbang                       # Python 3.10+, 런타임 의존성은 httpx 하나
+```
+
+```bash
+pip install git+https://github.com/springwindteam/sarangbang.git     # 최신 main
+git clone https://github.com/springwindteam/sarangbang.git && cd sarangbang && pip install -e ".[dev]"   # 개발
+```
+
+## 30초 체험
+
+```bash
+sarangbang quickstart --fake --msgs 10
+```
+
+```text
+#  1 07:00 마포: 다음 달부터 구립 도서관이 밤 10시까지 연다네요~^^ 퇴근하고 갈 수 있겠어요
+#  2 08:36 서대문: 밤 10시까지면 퇴근하고 들를 수 있겠네요
+#  3 10:12 은평: (#1에 답장) 골목이 어두워서 걱정이에요
+…
+{"sec": 0.0, "calls": 12, "rooms": [{"room_id": "r1", "messages": 10, "stop": "target"}]}
+```
+
+`--fake`는 네트워크 없이 `FakeLane`이 정해 둔 문장을 순서대로 돌려줍니다. 내장 시나리오(동네 도서관 야간 개관 · 시민 4명 · 쟁점 카드 4장)는
+[`src/sarangbang/data/toy_library.json`](src/sarangbang/data/toy_library.json)에 있습니다. `--topic policy`를 주면 정책용 문구(`POLICY_KO` · `ko_s12`)로 돌립니다.
+
+## 국산 AI 모델 연결하기
+
+sarangbang은 OpenAI 호환 `/chat/completions`만 쓰므로 **한국어 모델을 어디서 받아 쓰든 같은 코드로 돌아갑니다.** 세 갈래를 프리셋으로 넣어 두었습니다.
+모델 이름·지원 인자·라이선스까지 정리한 자세한 안내는 **[docs/korean-ai-providers.md](docs/korean-ai-providers.md)** 에 있습니다.
+
+| 경로 | 프리셋 | 준비물 | 예 |
+|---|---|---|---|
+| **국내 기업 API** | `upstage` (Solar) · `clova` (NAVER CLOVA Studio, HyperCLOVA X) | API 키 | `UPSTAGE_API_KEY=… sarangbang quickstart --provider upstage --model solar-mini4` |
+| **중개 플랫폼** | `friendli` · `openrouter` | 플랫폼 키 | `OPENROUTER_API_KEY=… sarangbang doctor --provider openrouter --model upstage/solar-mini4` |
+| **직접 띄우기** | `vllm` · `sglang` · `ollama` · `lmstudio` | GPU 또는 노트북 | `ollama pull exaone3.5:7.8b && sarangbang quickstart --provider ollama --model exaone3.5:7.8b` |
+
+```bash
+sarangbang providers                  # 쓸 수 있는 곳 · 키 환경 변수 · 추천 모델 (키가 설정된 곳은 ✓)
+sarangbang models                     # 오픈 웨이트 국산 모델 18종 — 크기·라이선스·추론 모드 끄는 법·vllm serve 힌트
+sarangbang doctor --provider clova    # 키·주소·모델 연결을 짧은 호출 한 번으로 점검
+```
+
+코드에서는 `get_provider("<프리셋>").lane(...)` 또는 환경 변수(`SARANGBANG_PROVIDER` 또는 `SARANGBANG_BASE_URL`·`SARANGBANG_API_KEY`·`SARANGBANG_MODEL`)로 고릅니다.
+
+```python
+from sarangbang import get_provider, lane_from_env
+
+lane = get_provider("upstage").lane("base", slots=4)                 # UPSTAGE_API_KEY, 기본 모델 solar-pro4
+lane = get_provider("clova").lane("base", model="HCX-DASH-002")      # presence/frequency_penalty를 빼고 보낸다
+lane = get_provider("vllm").lane("base", model="skt/A.X-4.0-Light")  # 키 없이, 생각(thinking) 모드는 끈 채
+lane = lane_from_env("base")                                         # SARANGBANG_* 환경 변수로
+```
+
+프리셋은 **그 서버가 받는 인자만** 보냅니다. CLOVA Studio는 `presence_penalty`를 거부하므로 빼고, vLLM·SGLang에는
+`chat_template_kwargs.enable_thinking=false`를 넣어 EXAONE·A.X·K-EXAONE의 추론 모드를 끕니다(한두 문장 발화에 생각을 켜 두면 응답이 비거나 잘립니다).
+Solar Open 계열은 `reasoning_effort="none"`, HyperCLOVA X SEED Think는 `force_reasoning=false`로 끕니다 — `sarangbang models`의 "추론 끄기" 칸을 보세요.
+
+> **어느 모델을 고를까?** 기본 프롬프트와 후처리는 EXAONE·A.X의 한국어 응답을 기준으로 맞췄습니다. 노트북이면 Ollama + `exaone3.5:7.8b`,
+> GPU 한 장이면 vLLM + `skt/A.X-4.0-Light`, API면 `solar-mini4`·`HCX-DASH-002`가 빠른 레인으로 알맞고, 앵커 레인에 큰 모델(`solar-pro4`, `HCX-005`, `EXAONE-4.5-33B`)을 둡니다.
 
 ## 설계 배경
 
@@ -68,47 +143,10 @@ sarangbang에서는 서로 아는 사람들이 소규모 단톡방에서 대화�
 | **주제 설정** | 주제에 따라 달라지는 입장 안내, 프롬프트 항목명, 준비 단계의 지시문을 `Topic`에서 설정합니다. 정책용(`POLICY_KO`)과 범용(`GENERIC_KO`) 설정을 제공합니다. |
 | **프롬프트 추가** | `PromptPlugin`으로 시스템 프롬프트와 응답 직전 안내에 내용을 추가할 수 있습니다. 대화 진행에 따라 달라지는 정보도 호출마다 전달할 수 있습니다. |
 | **쟁점 카드** | 시민의 관점과 상황, 입장에 맞춰 쟁점 카드를 배정합니다. 카드를 받지 못한 시민에게는 '들은 얘기'로 참고할 카드를 하나 배정합니다. |
-| **공개 페르소나 데이터셋** | `NemotronKoreaAdapter`로 Nemotron-Personas-Korea 증강판을 불러와 시민 데이터로 사용할 수 있습니다. 직접 만든 데이터도 어댑터로 연결할 수 있습니다. |
+| **공개 페르소나 데이터셋** | `NemotronKoreaAdapter`와 `load_nemotron_rows`로 Nemotron-Personas-Korea 증강판을 불러와 시민 데이터로 사용할 수 있습니다. 직접 만든 데이터도 어댑터로 연결할 수 있습니다. |
+| **국산 모델 프리셋** | `get_provider("upstage"\|"clova"\|"friendli"\|"openrouter"\|"vllm"\|"sglang"\|"ollama"\|"lmstudio")`가 주소·키·그 서버가 받는 인자를 맞춰 줍니다. `OPEN_MODELS`에 오픈 웨이트 국산 모델 목록이 있습니다. |
+| **시나리오 파일과 CLI** | 주제·시민·카드를 JSON 하나에 담아 `sarangbang run`으로 돌리고 결과를 JSON으로 저장합니다. |
 | **의존성과 서버 호환성** | 런타임 의존성은 `httpx` 하나입니다. OpenAI 호환 `/chat/completions` API를 제공하는 서버를 사용할 수 있습니다. |
-
-## 빠른 시작
-
-### 설치
-
-```bash
-git clone https://github.com/springwindteam/sarangbang.git
-cd sarangbang
-pip install -e .            # Python 3.10+
-pip install -e ".[dev]"     # 테스트·린트(pytest, ruff)
-```
-
-### 모델 없이 실행하기
-
-```bash
-python examples/quickstart.py --fake --msgs 10
-```
-
-```text
-#  1 07:00 마포: 다음 달부터 구립 도서관이 밤 10시까지 연다네요~^^ 퇴근하고 갈 수 있겠어요
-#  2 08:36 서대문: 밤 10시까지면 퇴근하고 들를 수 있겠네요
-#  3 10:12 은평: (#1에 답장) 골목이 어두워서 걱정이에요
-…
-{"sec": 0.0, "calls": 12, "rooms": [{"room_id": "r1", "messages": 10, "stop": "target"}]}
-```
-
-`--fake` 옵션을 사용하면 `FakeLane`이 미리 정해진 문장을 순서대로 반환합니다. 예제의 주제, 시민 정보, 쟁점 카드는 `examples/toy_policy.json`에 있습니다.
-기본 실행에는 범용 설정(`GENERIC_KO`, `ko_generic`)을 사용합니다. 정책용 설정을 사용하려면 `--topic policy`를 추가합니다.
-
-### 모델 연결하기
-
-```bash
-export SARANGBANG_BASE_URL=https://<openai-compatible-server>/v1
-export SARANGBANG_API_KEY=...
-export SARANGBANG_MODEL=...
-python examples/quickstart.py --msgs 30
-```
-
-모델을 연결하면 대화를 시작하는 첫 메시지도 LLM이 생성합니다(`material.seed_message`).
 
 ## 동작 방식
 
@@ -140,6 +178,24 @@ flowchart LR
 5. 목표 메시지 수에 도달하거나 모든 시민이 연속 두 번씩 발언을 건너뛰면 해당 방의 대화를 종료합니다.
 
 ## 핵심 개념
+
+### 라이브러리로 쓰기
+
+```python
+import asyncio
+from sarangbang import get_provider, load_scenario, run_rooms
+from sarangbang import scenario as S
+
+d = load_scenario("toy_library")                      # 또는 load_scenario("my_scenario.json")
+prep = S.prepare(d)                                   # 카드 배분 → 시민별 프롬프트 (LLM 없음)
+p = get_provider("vllm")
+share = S.seed_share(d, prep, p.json_llm(model="skt/A.X-4.0-Light"))        # 첫 메시지(LLM). 시나리오에 "share"가 있으면 그것
+room = S.make_room(d, prep, share, target_msgs=40)
+lanes = {"base": p.lane("base", model="skt/A.X-4.0-Light", slots=4)}
+stats = asyncio.run(run_rooms([room], lanes, on_message=lambda r, m: print(S.format_line(r, m))))
+```
+
+시나리오 파일 없이 `Room`·`build_room`을 직접 조립하는 예는 [`examples/nemotron_korea.py`](examples/nemotron_korea.py)에 있습니다.
 
 ### `Room`
 
@@ -180,14 +236,59 @@ urge(i) = 정적 점수
 ### `Lane`과 `run_rooms`
 
 ```python
-lanes = {"anchor": Lane.openai("anchor", BIG_URL, KEY, BIG_MODEL, slots=2),
-         "base":   Lane.openai("base", FAST_URL, KEY, FAST_MODEL, slots=4)}
+from sarangbang import Lane, get_provider, run_rooms
+
+lanes = {"anchor": get_provider("upstage").lane("anchor", model="solar-pro4", slots=2),
+         "base":   get_provider("vllm").lane("base", model="skt/A.X-4.0-Light", slots=8)}
+# 프리셋 없이 아무 OpenAI 호환 서버: Lane.openai("base", "https://…/v1", KEY, MODEL, slots=4)
 stats = await run_rooms(rooms, lanes, on_message=callback, should_cancel=lambda: False)
 ```
 
 - `slots`는 모든 방이 공유하는 레인별 동시 호출 한도입니다. 대화 진행률이 낮은 방을 우선 처리합니다.
 - `lanes`에 앵커 레인이 없으면 해당 방의 모든 시민이 기본 레인을 사용합니다.
 - `on_message(room, msg)`는 새 메시지가 추가될 때마다 호출됩니다. 동기 함수와 비동기 함수를 모두 지원하며, 실시간 화면 표시나 메시지 저장에 사용할 수 있습니다.
+
+## 시나리오 파일
+
+주제·시민·카드를 JSON 하나에 담으면 `sarangbang run`과 `load_scenario`로 바로 돌릴 수 있습니다. 내장 시나리오
+[`toy_library.json`](src/sarangbang/data/toy_library.json)과 [`examples/cafe_price.json`](examples/cafe_price.json)이 본보기입니다.
+
+```jsonc
+{
+  "title": "단골 카페 가격 인상",
+  "topic": "generic",                          // 선택. generic(GENERIC_KO·ko_generic) | policy(POLICY_KO·ko_s12)
+  "spec": "ko_generic",                        // 선택. 내장 사양 이름 또는 JSON 경로
+  "room_name": "동네 카페 모임", "room_desc": "…",   // 선택. Scene 덮어쓰기
+  "digest": {"summary": "…", "facts": [{"statement": "…", "condition": "", "status": "확정·시행"}]},
+  "target": {"who": "카페 단골"},               // 어댑터·scorer에 그대로 전달
+  "cards": {"c1": {…}}, "relevance": {"c1": "direct"},   // 쟁점 카드(선택)와 관련성(없으면 모두 direct)
+  "personas": [{"name": "하늘", "me": "30대 직장인 …", "score": 3, "lean": -0.4}],   // DictAdapter 레코드
+  "share": "첫 메시지",                         // 선택. 없으면 LLM이 쓴다(--fake면 고정 문장)
+  "per_person": 1, "days": 1, "day_reset": false
+}
+```
+
+```bash
+sarangbang run examples/cafe_price.json --fake --msgs 20
+sarangbang run examples/cafe_price.json --provider ollama --model exaone3.5:7.8b --msgs 40 --out run.json
+```
+
+`--out`으로 저장한 JSON에는 메시지(`messages`)와 호출 기록(`calls` — 레인·지연·원본 응답·정리 내역)이 들어갑니다.
+시민 레코드가 `DictAdapter` 형식이 아니면(예: Nemotron 행) `S.prepare(d, adapter=NemotronKoreaAdapter())`처럼 어댑터를 넘깁니다.
+
+## 명령줄 도구
+
+| 명령 | 하는 일 |
+|---|---|
+| `sarangbang quickstart [--fake] [--msgs N] [--topic generic\|policy]` | 내장 시나리오로 방 하나 |
+| `sarangbang run <시나리오.json> [--msgs N] [--out run.json] [--spec …]` | 시나리오 파일로 방 하나, 결과 저장 |
+| `sarangbang providers [--json]` | 국산 AI를 쓸 수 있는 곳(프리셋)과 키 환경 변수 |
+| `sarangbang models [--vendor LG] [--json]` | 오픈 웨이트 국산 모델 목록과 `vllm serve` 힌트 |
+| `sarangbang doctor [--provider …] [--model …]` | `/models` 조회 + 짧은 호출 한 번으로 연결 점검 |
+
+모델 인자는 모든 명령이 같습니다: `--provider <프리셋>` `--model <이름>` `--base-url <…/v1>` `--api-key-env <환경 변수>` `--slots N`
+`--extra '{"reasoning_effort":"none"}'`, 앵커 레인은 `--anchor-provider` `--anchor-model` `--anchor-slots`.
+인자가 없으면 `SARANGBANG_*`(앵커는 `SARANGBANG_ANCHOR_*`) 환경 변수를 읽습니다.
 
 ## 프롬프트 설정 JSON
 
@@ -363,7 +464,7 @@ class MyAdapter:
     def display_names(self, personas):     return [p["nickname"] for p in personas]
 ```
 
-시민 정보가 문장 형태로 정리된 dict라면 내장 `DictAdapter`를 사용할 수 있습니다. 데이터 형식은 `examples/toy_policy.json`을 참고하세요.
+시민 정보가 문장 형태로 정리된 dict라면 내장 `DictAdapter`를 사용할 수 있습니다. 데이터 형식은 [`toy_library.json`](src/sarangbang/data/toy_library.json)을 참고하세요.
 
 ### 공개 페르소나 데이터셋: Nemotron-Personas-Korea 증강판
 
@@ -371,11 +472,12 @@ class MyAdapter:
 
 소득 순위와 정치 성향 등 여론 분석에 필요한 정보, 참여자를 조건별로 선택할 때 쓸 수 있는 자녀 유무와 교육 분야 종사 여부를 추가했습니다. 다문화 가구 데이터를 보강하고, 각 인물을 1인칭으로 소개하는 요약문도 포함했습니다.
 
-`NemotronKoreaAdapter`를 사용하면 데이터셋의 각 행을 별도로 변환하지 않고 시민 데이터로 전달할 수 있습니다. 데이터셋을 사용할 때는 소개 페이지의 인용 안내에 따라 원본과 증강판을 함께 표기해 주세요.
+`NemotronKoreaAdapter`를 사용하면 데이터셋의 각 행을 별도로 변환하지 않고 시민 데이터로 전달할 수 있습니다. `load_nemotron_rows`는 Hugging Face 데이터셋 뷰어 API로 필요한 행만 읽습니다(1.2GB 전체를 내려받지 않습니다). 데이터셋을 사용할 때는 소개 페이지의 인용 안내에 따라 원본과 증강판을 함께 표기해 주세요.
 
 ```python
-from sarangbang.adapters import NemotronKoreaAdapter
+from sarangbang.adapters import NemotronKoreaAdapter, load_nemotron_rows
 
+rows = load_nemotron_rows(30, skip=0, province="서울")        # 또는 where={"has_children": True}
 ad = NemotronKoreaAdapter()                 # include_story=True면 story_summary를 [내 이야기]로 추가
 target = {"relations": [                    # 데이터 열 조건 → 주제와의 관계 문장·정적 점수
     {"if": {"housing_type": ["다세대주택", "연립주택", "단독주택"]}, "text": "주차 공간이 부족한 집에 산다", "score": 2},
@@ -396,7 +498,7 @@ prompts = build_room(rows, ad.display_names(rows), adapter=ad, target=target, ..
 
 데이터셋에 성격 점수와 자녀 나이 정보가 없어 프롬프트에도 `[내 성격]`과 자녀 학년을 포함하지 않습니다. 모든 인물이 만 19세 이상이며, 어댑터는 `activity_status=재학`인 인물을 대학생으로 처리합니다.
 
-[`examples/nemotron_korea.py`](examples/nemotron_korea.py)에서 실행 예시를 확인할 수 있습니다. 이 예제는 Hugging Face 데이터셋 뷰어 API로 필요한 행만 불러옵니다.
+[`examples/nemotron_korea.py`](examples/nemotron_korea.py)에서 실행 예시를 확인할 수 있습니다.
 
 ## 주제 정보와 쟁점 카드 준비
 
@@ -425,10 +527,10 @@ prompts = build_room(rows, ad.display_names(rows), adapter=ad, target=target, ..
 주제 정보와 카드를 준비한 뒤, 아래 순서로 관련성을 평가하고 시민에게 카드를 배정합니다.
 
 ```python
-from sarangbang import GENERIC_KO, JsonLLM, material as M, kept, allocate, hearsay_fill
+from sarangbang import GENERIC_KO, get_provider, material as M, kept, allocate, hearsay_fill
 
 topic = GENERIC_KO
-llm = JsonLLM.openai(BASE_URL, KEY, MODEL)
+llm = get_provider("upstage").json_llm(model="solar-pro4")          # 또는 JsonLLM.openai(BASE_URL, KEY, MODEL)
 head = M.head(title, digest, topic)
 rel_of, _ = M.relevance(llm, head, candidate_cards, topic=topic)   # direct | related | unrelated
 links, _ = M.links(llm, head, kept(rel_of, cards), topic=topic)    # 카드마다 1인칭 연결 의견 한 줄
@@ -449,13 +551,14 @@ given = [[{**x, "link": links.get(x["card"], "")} for x in v] for v in given]
 ```
 
 `room.calls`에는 각 호출의 레인, 응답 시간, 성공 여부, 모델 원본 응답, 응답 정리 내역이 저장됩니다. `run_rooms`는 실행 시간과 호출 수, 방별 메시지 수 및 종료 사유를 반환합니다.
-반환값의 구조는 `{"sec", "calls", "rooms": [{"room_id", "messages", "stop": "target"|"quiet"}]}`입니다.
+반환값의 구조는 `{"sec", "calls", "rooms": [{"room_id", "messages", "stop": "target"|"quiet"}]}`입니다. `sarangbang run --out`은 이 둘을 한 JSON으로 저장합니다(`scenario.transcript`).
 
 ## 모델 백엔드
 
-- `Lane`과 `JsonLLM`은 OpenAI 호환 `/chat/completions` API를 호출합니다. vLLM, SGLang, 상용 게이트웨이 등을 연결할 수 있습니다.
+- `Lane`과 `JsonLLM`은 OpenAI 호환 `/chat/completions` API를 호출합니다. 국내 API(업스테이지·CLOVA Studio), 중개 플랫폼, vLLM·SGLang·Ollama 등을 연결할 수 있습니다.
+  `get_provider()` 프리셋이 주소·키 환경 변수·그 서버가 받는 인자를 맞춰 주고, 프리셋 없이 `Lane.openai(name, base_url, key, model)`로 아무 서버에나 붙일 수 있습니다.
 - 발언 생성에 사용하는 기본 샘플링 설정은 `temperature 0.7 · presence_penalty 0.4 · frequency_penalty 0.3 · max_tokens 400`입니다.
-  `chat_template_kwargs.enable_thinking=false`로 추론 모드를 비활성화합니다. 서버가 이 옵션을 지원하지 않으면 `Lane(sampling=…)`으로 설정을 변경할 수 있습니다.
+  vLLM·SGLang 프리셋은 `chat_template_kwargs.enable_thinking=false`로 추론 모드를 끕니다. 서버가 어떤 인자를 거부하면 `Lane(sampling=…)`으로 바꿉니다.
 - 일시적인 오류(429·5xx)가 발생하면 4·8·12…초 간격으로 최대 6회 재시도합니다. 호출이 최종적으로 실패하면 해당 시민의 차례를 건너뛰고 대화를 계속합니다.
 - 기본값은 EXAONE과 A.X를 사용한 테스트를 바탕으로 정했습니다. 앵커 레인에는 대형 모델을, 기본 레인에는 빠른 모델을 사용하는 구성입니다.
 
@@ -494,7 +597,7 @@ EXAONE이 테스트에서 도구 호출을 거의 사용하지 않았던 점을 
 | `[이름]`으로 구분한 여러 사람의 발언 또는 여러 개의 답장 | 본인 발언을 우선 선택하고, 답장이 여러 개면 첫 번째만 남깁니다. |
 | 다른 시민의 이름으로 작성하거나 이름만 보낸 응답 | 발언을 건너뛴 것으로 처리합니다. |
 
-다른 OpenAI 호환 모델도 연결할 수 있습니다. 다만 기본 프롬프트와 후처리 규칙은 두 모델의 한국어 응답을 기준으로 조정했으므로, 모델을 바꾸면 생성된 대화를 확인하며 설정을 맞추는 것이 좋습니다.
+다른 OpenAI 호환 모델도 연결할 수 있습니다. 다만 기본 프롬프트와 후처리 규칙은 두 모델의 한국어 응답을 기준으로 조정했으므로, 모델을 바꾸면 `sarangbang run --out`으로 저장한 `calls[].fixes`와 생성된 대화를 확인하며 설정을 맞추는 것이 좋습니다.
 
 ## 자주 묻는 질문
 
@@ -503,6 +606,12 @@ EXAONE이 테스트에서 도구 호출을 거의 사용하지 않았던 점을 
 
 **같은 설정으로 실행하면 결과도 같나요?**
 엔진의 발언 우선순위 계산, 카드 배정, 대화방 진행 로직에는 난수를 사용하지 않습니다. 다만 모델의 샘플링(`temperature`)과 네트워크 상황에 따른 응답 완료 순서 때문에 실행 결과는 달라질 수 있습니다.
+
+**국산 모델만 써야 하나요?**
+아닙니다. OpenAI 호환 서버라면 무엇이든 `--base-url`·`Lane.openai`로 붙습니다. 다만 프롬프트·후처리가 한국어 모델(EXAONE·A.X)을 기준으로 맞춰져 있고, 한국어 구어체·지역·세대 표현은 모델 차이가 크므로 같은 시나리오를 두세 모델로 비교해 보기를 권합니다.
+
+**비용은 얼마나 드나요?**
+방 하나(시민 30명, 메시지 100개)는 호출 100~150번, 호출당 입력 1.5~3K 토큰·출력 50~100 토큰 정도입니다. 호스팅 API의 경량 모델이면 방 하나에 수십 원~수백 원 수준이고, 직접 띄우면 7B급은 GPU 한 장으로 충분합니다. 자세한 감각은 [docs/korean-ai-providers.md](docs/korean-ai-providers.md#5-비용-감각)에 있습니다.
 
 **다른 언어도 지원하나요?**
 엔진 자체는 특정 언어에 의존하지 않습니다. 다만 기본 설정은 한국어를 기준으로 작성되어 있습니다. 다른 언어를 사용하려면 `Scene`의 문구, 프롬프트 설정 JSON, `clean_reply`의 한국어 처리 패턴, 반복 표현 감지에 사용하는 조사와 일반 단어 목록을 변경해야 합니다.
@@ -514,6 +623,9 @@ EXAONE이 테스트에서 도구 호출을 거의 사용하지 않았던 점을 
 
 ```text
 src/sarangbang/
+├── cli.py         sarangbang 명령 (quickstart · run · providers · models · doctor)
+├── providers.py   Provider 프리셋(get_provider · lane_from_env) · OPEN_MODELS(오픈 웨이트 국산 모델 목록)
+├── scenario.py    load_scenario · prepare · make_room · transcript (시나리오 JSON → 방)
 ├── engine.py      Room · run_rooms · parse_text
 ├── llm.py         Lane · JsonLLM · FakeLane
 ├── spec.py        load_spec · build_room · PersonPrompt · align_given
@@ -526,45 +638,34 @@ src/sarangbang/
 ├── cards.py       allocate · hearsay_fill · kept
 ├── material.py    relevance · links · seed_message · head
 ├── persona.py     PersonaAdapter · DictAdapter
-├── adapters/      NemotronKoreaAdapter (Nemotron-Personas-Korea 증강판)
-└── specs/         ko_generic.json · ko_s12.json
-examples/          quickstart.py · toy_policy.json · nemotron_korea.py
-tests/             pytest
+├── adapters/      NemotronKoreaAdapter · load_nemotron_rows
+├── specs/         ko_generic.json · ko_s12.json
+└── data/          toy_library.json (내장 시나리오)
+docs/              korean-ai-providers.md (국산 AI 가이드) · release.md (배포 절차)
+examples/          quickstart.py · nemotron_korea.py · cafe_price.json
+tests/             pytest (네트워크 없음)
+.github/           CI · 릴리스 워크플로 · 이슈/PR 템플릿
 ```
 
 ## 기여하기
 
-기여 방법은 [CONTRIBUTING.md](CONTRIBUTING.md)를 참고하세요. 프롬프트 문구를 변경하는 경우에는 실험 조건, 평가 결과, 대화 샘플을 함께 첨부해 주세요.
+기여 방법은 [CONTRIBUTING.md](CONTRIBUTING.md)를 참고하세요. 국산 모델 제공처 정보가 바뀌었으면 "제공처 정보 갱신" 이슈 템플릿으로,
+프롬프트 문구를 바꾸려면 실험 조건·평가 결과·대화 샘플을 함께 "사양 문구 변경 제안" 템플릿으로 올려 주세요.
+행동 강령은 [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md), 보안 문제는 [SECURITY.md](SECURITY.md)를 보세요.
+
+## 인용
+
+연구에 사용하셨다면 [CITATION.cff](CITATION.cff)를 참고해 인용해 주세요.
+
+```bibtex
+@software{sarangbang2026,
+  author = {{Team Chunpung (춘풍팀)}},
+  title  = {sarangbang: Korean group-chat public-opinion simulation engine for LLM personas},
+  year   = {2026},
+  url    = {https://github.com/springwindteam/sarangbang}
+}
+```
 
 ## 라이선스
 
 [Apache License 2.0](LICENSE)을 따릅니다. 관련 고지 사항은 [NOTICE](NOTICE)에서 확인할 수 있습니다.
-
----
-
-## English
-
-**sarangbang** simulates public opinion as conversation. LLM personas chat in small Korean group-chat rooms
-(*danthokbang*) about a topic — a policy, a product, a neighborhood issue — and the transcript is the output.
-
-- **Stateless calls.** Every call is `system` (persona facts + spec sections) + `user` (the chat transcript rendered as it would
-  appear on screen). No agent memory, no rounds.
-- **Async rooms.** Many rooms share per-lane concurrency limits. One in-flight call per persona; late replies get an automatic reply-to.
-- **Deterministic speaker order.** A data-driven static score plus recency, replies, passes and waiting time. No randomness in the engine.
-- **Two lanes.** The top-scored personas (anchors) use a stronger model; the rest use a fast one; failed anchor calls fall back.
-- **Spec JSON.** Prompt sections and wording live in one JSON file. The bundled `ko_s12` spec was selected by comparative tests on
-  Korean education-policy simulations; `ko_generic` is the topic-neutral default.
-- **Topic adapter.** Stance sentences, the relation-section label and the preparation prompts depend on the topic and live in `Topic`
-  (`POLICY_KO`, `GENERIC_KO`, or your own).
-- **Prompt plugins.** `PromptPlugin` adds system sections, a closing tail, or per-call context without editing the spec.
-- **Bring your own personas.** Records are opaque to the engine. Implement `PersonaAdapter` for your schema, or use the bundled
-  `NemotronKoreaAdapter` for [Nemotron-Personas-Korea — Augmented](https://huggingface.co/datasets/springwindteam/nemotron-personas-korea-augmented),
-  1M synthetic Korean personas (CC BY 4.0) released by the same team (Team Chunpung).
-- **Any OpenAI-compatible backend.** Runtime dependency: `httpx`.
-
-```bash
-pip install -e .
-python examples/quickstart.py --fake
-```
-
-Licensed under Apache-2.0.

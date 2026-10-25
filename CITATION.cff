@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use sarangbang in your research, please cite it as below."
+title: "sarangbang: Korean group-chat public-opinion simulation engine for LLM personas"
+type: software
+authors:
+  - name: "Team Chunpung (춘풍팀)"
+    email: spring.wind.team@gmail.com
+repository-code: "https://github.com/springwindteam/sarangbang"
+license: Apache-2.0
+version: 0.2.0
+date-released: 2026-10-25
+keywords:
+  - large language models
+  - social simulation
+  - public opinion
+  - Korean
+  - agent-based modeling
