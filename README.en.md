@@ -14,6 +14,10 @@
 [![CI](https://github.com/SpringWindsTeam/sarangbang/actions/workflows/ci.yml/badge.svg)](https://github.com/SpringWindsTeam/sarangbang/actions/workflows/ci.yml)
 [![Dataset](https://img.shields.io/badge/🤗%20dataset-Nemotron--Personas--Korea%20augmented-yellow)](https://huggingface.co/datasets/springwindteam/nemotron-personas-korea-augmented)
 
+<img src="assets/demo-chat.gif" width="360" alt="Simulated viewers chatting in Korean about couples on a dating show">
+
+<sub>A group chat simulated with sarangbang — seven virtual viewers react to a dating show (model: A.X-K2)</sub>
+
 </div>
 
 **sarangbang** simulates public opinion as conversation. LLM personas chat in small Korean group-chat rooms (*danthokbang*)
