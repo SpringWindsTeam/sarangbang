@@ -90,7 +90,7 @@ sarangbang doctor --provider clova --model HCX-DASH-002
 |---|---|
 | 주소 | `https://api.friendli.ai/serverless/v1` (Model APIs) · Dedicated Endpoints는 `https://api.friendli.ai/dedicated/v1` |
 | 키 | https://friendli.ai → Personal Access Token → `FRIENDLI_TOKEN` |
-| 모델 | 바뀝니다 — `GET /models`로 확인. EXAONE 4.0(2025-07)과 K-EXAONE 236B(2025-12~2026-01 무료)를 서빙해 온 플랫폼 |
+| 모델 | 바뀝니다 — `GET /models`로 확인. EXAONE 4.0(2025-07)과 K-EXAONE 236B(2025-12\~2026-01 무료)를 서빙해 온 플랫폼 |
 | 문서 | https://friendli.ai/docs/guides/openai-compatibility |
 
 국산 모델이 Model APIs 목록에 없을 때는 Dedicated Endpoint로 Hugging Face의 임의 모델(예: `LGAI-EXAONE/EXAONE-4.5-33B`)을 올려 쓸 수
@@ -196,8 +196,8 @@ A.X K1/K2, Solar Open/Open2, Motif 3이 이 프로젝트에서 공개된 모델�
 
 ## 5. 비용 감각
 
-- 방 하나(시민 30명, 메시지 100개)는 호출 100~150번, 호출당 입력 1.5~3K 토큰·출력 50~100 토큰 정도입니다.
-  호스팅 API의 경량 모델(예: solar-mini4, HCX-DASH-002)이면 방 하나에 수십 원~수백 원 수준입니다.
+- 방 하나(시민 30명, 메시지 100개)는 호출 100\~150번, 호출당 입력 1.5\~3K 토큰·출력 50\~100 토큰 정도입니다.
+  호스팅 API의 경량 모델(예: solar-mini4, HCX-DASH-002)이면 방 하나에 수십 원\~수백 원 수준입니다.
 - 직접 띄우면 7B급은 GPU 한 장(24GB)으로 `--slots 8` 정도 동시 호출이 무난합니다. MoE 대형 모델(A.X K2, K-EXAONE 2.0)은 다중 GPU 노드가 필요합니다.
 - 비용 없이 흐름만 보려면 `--fake`, 노트북에서 실제 모델을 보려면 Ollama + EXAONE 3.5 2.4B.
 
