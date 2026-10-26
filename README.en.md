@@ -141,7 +141,7 @@ sarangbang assumes a situation where people who know each other talk in a small 
 
 ## Features
 
-| | |
+| Feature | Description |
 |---|---|
 | **Independent model calls** | Each call passes the citizen information and prompt spec as `system` and the chat log as `user`. The engine manages the conversation state. |
 | **Asynchronous execution** | Conversations in multiple rooms proceed without rounds. Rooms share per-lane (model endpoint) concurrency limits, and each citizen has at most one call in flight at a time. |
