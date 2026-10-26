@@ -3,7 +3,7 @@
     "id": "c1",
     "name": "야간 귀가 주차",
     "interest": "늦게 퇴근해 밤에만 차를 대는 사람의 부담",
-    "ask_form": "정기권 40장이면 금방 동나지 않나?",
+    "ask_form": "정기권 40장으로 야간 이용자 수요를 감당할 수 있나요?",
     "perspective": "이용 주민",
     "require": [
       "car_owner"
@@ -11,7 +11,7 @@
     "arg_types": [
       "비용"
     ],
-    "freq": 9,
+    "freq": 1,
     "stance_lean": {
       "lean": "반대"
     },
@@ -27,12 +27,12 @@
     "id": "c2",
     "name": "골목 주차난",
     "interest": "주차장에서 밀려난 차가 골목으로 몰릴지",
-    "ask_form": "골목에 차 더 늘어나는 거 아닌가?",
+    "ask_form": "주차장에서 밀려난 차가 골목으로 몰리지 않을까요?",
     "perspective": "차 없는 주민",
     "arg_types": [
       "편의"
     ],
-    "freq": 7,
+    "freq": 1,
     "stance_lean": {
       "lean": "반대"
     },
@@ -54,12 +54,12 @@
     "id": "c3",
     "name": "장기 방치 차량",
     "interest": "주차장을 며칠씩 차지하던 차가 빠질지",
-    "ask_form": "몇 주째 안 움직이는 차들 이제 빠지려나?",
+    "ask_form": "유료화하면 오래 세워 둔 차들이 정리되나요?",
     "perspective": "이용 주민",
     "arg_types": [
       "공정"
     ],
-    "freq": 6,
+    "freq": 1,
     "stance_lean": {
       "lean": "찬성"
     },
@@ -81,7 +81,7 @@
     "id": "c4",
     "name": "가게 손님 주차",
     "interest": "저녁 장사 손님이 차를 댈 곳",
-    "ask_form": "저녁 손님들 주차비 부담되면 안 올 텐데?",
+    "ask_form": "저녁 손님들의 주차비 부담은 어떻게 되나요?",
     "perspective": "상인",
     "require": [
       "shop_owner"
@@ -89,7 +89,7 @@
     "arg_types": [
       "비용"
     ],
-    "freq": 5,
+    "freq": 1,
     "stance_lean": {
       "lean": "반대"
     },
@@ -105,12 +105,12 @@
     "id": "c5",
     "name": "야간 안전",
     "interest": "밤에 주차장과 골목을 오가는 길의 안전",
-    "ask_form": "조명이랑 CCTV는 언제 바뀌나?",
+    "ask_form": "주차장 조명과 CCTV는 언제 바뀌나요?",
     "perspective": "이용 주민",
     "arg_types": [
       "안전"
     ],
-    "freq": 4,
+    "freq": 1,
     "stance_lean": {
       "lean": "조건부"
     },
@@ -126,7 +126,7 @@
     "id": "c6",
     "name": "자리 찾기",
     "interest": "밤늦게 와도 빈자리가 생길지",
-    "ask_form": "돈 받으면 오히려 자리 찾기는 쉬워지려나?",
+    "ask_form": "요금을 받으면 밤에 빈자리를 찾기 쉬워지나요?",
     "perspective": "이용 주민",
     "require": [
       "car_owner"
@@ -134,7 +134,7 @@
     "arg_types": [
       "편의"
     ],
-    "freq": 4,
+    "freq": 1,
     "stance_lean": {
       "lean": "찬성"
     },
@@ -150,11 +150,11 @@
     "id": "c7",
     "name": "요금 수입 사용처",
     "interest": "걷은 요금이 실제로 어디에 쓰이는지",
-    "ask_form": "수입이 얼마나 되고 어디 쓰는지 공개하나?",
+    "ask_form": "걷은 요금의 액수와 사용처가 공개되나요?",
     "arg_types": [
       "신뢰"
     ],
-    "freq": 3,
+    "freq": 1,
     "stance_lean": {
       "lean": "중립"
     },
@@ -170,12 +170,12 @@
     "id": "c8",
     "name": "정기권 공정성",
     "interest": "선착순 정기권이 누구에게 돌아가는지",
-    "ask_form": "선착순이면 온라인 못 하는 어르신은 어떡하나?",
+    "ask_form": "온라인 선착순 판매에서 어르신은 어떻게 사나요?",
     "perspective": "어르신",
     "arg_types": [
       "공정"
     ],
-    "freq": 2,
+    "freq": 1,
     "stance_lean": {
       "lean": "조건부"
     },

@@ -3,13 +3,14 @@
     "id": "c1",
     "name": "상철·영숙 찐사",
     "interest": "첫인상부터 한 사람만 본 상철과 그걸 편하다고 한 영숙",
-    "ask_form": "이 정도면 둘이 찐사 아님?",
+    "ask_form": "상철의 마음이 최종 선택까지 영숙에게 그대로 갈까요?",
+    "perspective": "상철·영숙 응원",
     "arg_types": [
       "커플 예측"
     ],
-    "freq": 9,
+    "freq": 1,
     "stance_lean": {
-      "lean": "찬성"
+      "lean": "중립"
     },
     "premises": [],
     "sources": [
@@ -23,13 +24,14 @@
     "id": "c2",
     "name": "영숙은 영호행",
     "interest": "영숙의 마음이 영호 쪽으로 기우는지",
-    "ask_form": "영숙 결국 영호 고르는 거 아냐?",
+    "ask_form": "영숙의 마음이 영호 쪽으로 기울고 있는 건가요?",
+    "perspective": "영숙→영호 예측",
     "arg_types": [
       "커플 예측"
     ],
-    "freq": 8,
+    "freq": 1,
     "stance_lean": {
-      "lean": "반대"
+      "lean": "중립"
     },
     "premises": [],
     "sources": [
@@ -43,13 +45,14 @@
     "id": "c3",
     "name": "옥순 변수",
     "interest": "옥순이 상철에게 건넨 커피와 '내일 얘기하자'",
-    "ask_form": "옥순 커피 그거 플러팅 맞지?",
+    "ask_form": "옥순이 상철에게 다가간 게 호감 표현인가요?",
+    "perspective": "옥순 변수 예측",
     "arg_types": [
       "커플 예측"
     ],
-    "freq": 6,
+    "freq": 1,
     "stance_lean": {
-      "lean": "조건부"
+      "lean": "중립"
     },
     "premises": [],
     "sources": [
@@ -63,11 +66,12 @@
     "id": "c4",
     "name": "예고편 낚시",
     "interest": "예고편이 일부러 헷갈리게 편집됐는지",
-    "ask_form": "예고편 원래 낚시잖아",
+    "ask_form": "예고편 장면이 실제 방송 분위기와 같은 건가요?",
+    "perspective": "예고편 의심",
     "arg_types": [
       "편집"
     ],
-    "freq": 6,
+    "freq": 1,
     "stance_lean": {
       "lean": "중립"
     },
@@ -89,13 +93,14 @@
     "id": "c5",
     "name": "영호 어장",
     "interest": "영호가 정숙·옥순과 동시에 대화하는 게 어장인지",
-    "ask_form": "영호 지금 어장 치는 거지?",
+    "ask_form": "영호는 정숙과 옥순 중 누구에게 마음이 있는 건가요?",
+    "perspective": "영호 어장 예측",
     "arg_types": [
       "커플 예측"
     ],
-    "freq": 5,
+    "freq": 1,
     "stance_lean": {
-      "lean": "반대"
+      "lean": "중립"
     },
     "premises": [],
     "sources": [
@@ -109,13 +114,14 @@
     "id": "c6",
     "name": "최종 커플 0쌍",
     "interest": "이번 기수는 최종 커플이 하나도 안 나올지",
-    "ask_form": "이러다 최종 0쌍 나오는 거 아냐?",
+    "ask_form": "이번에 최종 커플이 나오기는 하는 건가요?",
+    "perspective": "최종 0쌍 예측",
     "arg_types": [
       "커플 예측"
     ],
-    "freq": 4,
+    "freq": 1,
     "stance_lean": {
-      "lean": "반대"
+      "lean": "중립"
     },
     "premises": [],
     "sources": [
@@ -129,13 +135,14 @@
     "id": "c7",
     "name": "정숙 다크호스",
     "interest": "마음 정한 사람 없다던 정숙이 판을 바꿀지",
-    "ask_form": "정숙이 제일 무서운 거 아님?",
+    "ask_form": "아직 마음을 안 정한 정숙이 판을 바꿀 수 있을까요?",
+    "perspective": "정숙 반전 예측",
     "arg_types": [
       "커플 예측"
     ],
-    "freq": 3,
+    "freq": 1,
     "stance_lean": {
-      "lean": "조건부"
+      "lean": "중립"
     },
     "premises": [],
     "sources": [

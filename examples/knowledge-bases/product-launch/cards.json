@@ -3,11 +3,11 @@
     "id": "c1",
     "name": "가격 부담",
     "interest": "200만 원 가까운 값이 쓸 만큼의 차이인지",
-    "ask_form": "이 값이면 일반 폰 두 대 아닌가?",
+    "ask_form": "이 가격만큼 일반 폰과 차이가 있는 건가요?",
     "arg_types": [
       "비용"
     ],
-    "freq": 9,
+    "freq": 1,
     "stance_lean": {
       "lean": "반대"
     },
@@ -23,11 +23,11 @@
     "id": "c2",
     "name": "내구성",
     "interest": "접히는 부분이 오래 버틸지",
-    "ask_form": "접는 부분은 몇 년 버티려나?",
+    "ask_form": "접히는 부분은 몇 년 정도 버틸 수 있나요?",
     "arg_types": [
       "품질"
     ],
-    "freq": 8,
+    "freq": 1,
     "stance_lean": {
       "lean": "조건부"
     },
@@ -49,7 +49,7 @@
     "id": "c3",
     "name": "무게 개선",
     "interest": "가벼워져서 들고 다니기 나아졌는지",
-    "ask_form": "24g이면 체감되나?",
+    "ask_form": "24g 가벼워진 게 들고 다닐 때 체감되나요?",
     "perspective": "기존 사용자",
     "require": [
       "current_user"
@@ -57,7 +57,7 @@
     "arg_types": [
       "편의"
     ],
-    "freq": 6,
+    "freq": 1,
     "stance_lean": {
       "lean": "찬성"
     },
@@ -73,7 +73,7 @@
     "id": "c4",
     "name": "보상 판매",
     "interest": "쓰던 폰 반납 보상이 실제로 얼마나 되는지",
-    "ask_form": "내 폰은 보상 얼마 받으려나?",
+    "ask_form": "쓰던 폰을 반납하면 실제로 얼마를 보상받나요?",
     "perspective": "기존 사용자",
     "require": [
       "current_user"
@@ -81,7 +81,7 @@
     "arg_types": [
       "비용"
     ],
-    "freq": 5,
+    "freq": 1,
     "stance_lean": {
       "lean": "중립"
     },
@@ -97,7 +97,7 @@
     "id": "c5",
     "name": "갈아타기",
     "interest": "다른 회사 폰에서 옮기면 불편한 점",
-    "ask_form": "앱이랑 사진 옮기기 번거롭지 않나?",
+    "ask_form": "다른 회사 폰에서 옮기면 데이터 이전이 번거롭나요?",
     "perspective": "경쟁 제품 사용자",
     "require": [
       "rival_user"
@@ -105,7 +105,7 @@
     "arg_types": [
       "편의"
     ],
-    "freq": 4,
+    "freq": 1,
     "stance_lean": {
       "lean": "조건부"
     },
@@ -121,11 +121,11 @@
     "id": "c6",
     "name": "큰 화면 쓰임새",
     "interest": "펼친 화면으로 실제로 무엇을 하게 되는지",
-    "ask_form": "펼쳐서 뭐 제일 많이 하게 될까?",
+    "ask_form": "펼친 큰 화면을 실제로 어디에 많이 쓰게 되나요?",
     "arg_types": [
       "취향"
     ],
-    "freq": 4,
+    "freq": 1,
     "stance_lean": {
       "lean": "찬성"
     },
@@ -141,11 +141,11 @@
     "id": "c7",
     "name": "기다렸다 사기",
     "interest": "출시 직후 사지 말고 값 내리기를 기다릴지",
-    "ask_form": "몇 달 기다리면 값 내리지 않을까?",
+    "ask_form": "출시 후 몇 달 기다리면 가격이 내려가나요?",
     "arg_types": [
       "비용"
     ],
-    "freq": 3,
+    "freq": 1,
     "stance_lean": {
       "lean": "중립"
     },
@@ -161,11 +161,11 @@
     "id": "c8",
     "name": "케이스·액세서리",
     "interest": "접이식이라 케이스 고르기가 까다로운지",
-    "ask_form": "케이스는 뭐 끼워야 하지?",
+    "ask_form": "접이식 폰에는 어떤 케이스를 써야 하나요?",
     "arg_types": [
       "편의"
     ],
-    "freq": 2,
+    "freq": 1,
     "stance_lean": {
       "lean": "중립"
     },

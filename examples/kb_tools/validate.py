@@ -60,7 +60,7 @@ def check(root) -> tuple[list[str], list[str]]:
             warns.append(f"{where}: interest가 깁니다. 원글 문장 대신 짧은 구절로 줄이세요")
 
     leans = collections.Counter((c.get("stance_lean") or {}).get("lean") for c in kb.cards.values())
-    if kb.cards:
+    if kb.cards and set(leans) != {"중립"}:          # 전부 중립이면 찬반 축이 없는 주제로 보고 균형 점검을 건너뜀
         top, n = leans.most_common(1)[0]
         if n / len(kb.cards) >= 0.7:
             warns.append(f"cards.json: 카드의 {n}/{len(kb.cards)}장이 '{top}'입니다. 찬반 방향을 고르게 하세요")

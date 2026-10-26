@@ -6,7 +6,10 @@
     "personality": "말이 짧고 확신에 차 있다",
     "short_self": "20대 회사원",
     "score": 3,
-    "lean": null
+    "lean": null,
+    "perspectives": [
+      "상철·영숙 응원"
+    ]
   },
   {
     "name": "라떼",
@@ -15,7 +18,10 @@
     "personality": "말을 툭툭 던진다",
     "short_self": "20대 대학생",
     "score": 2,
-    "lean": null
+    "lean": null,
+    "perspectives": [
+      "영숙→영호 예측"
+    ]
   },
   {
     "name": "자두",
@@ -24,7 +30,10 @@
     "personality": "리액션이 크다",
     "short_self": "30대 간호사",
     "score": 2,
-    "lean": null
+    "lean": null,
+    "perspectives": [
+      "옥순 변수 예측"
+    ]
   },
   {
     "name": "쿠키",
@@ -33,7 +42,10 @@
     "personality": "의심이 많다",
     "short_self": "20대 마케터",
     "score": 2,
-    "lean": null
+    "lean": null,
+    "perspectives": [
+      "예고편 의심"
+    ]
   },
   {
     "name": "모카",
@@ -42,7 +54,10 @@
     "personality": "무뚝뚝하고 현실적이다",
     "short_self": "40대 자영업",
     "score": 1,
-    "lean": null
+    "lean": null,
+    "perspectives": [
+      "최종 0쌍 예측"
+    ]
   },
   {
     "name": "보리",
@@ -51,7 +66,10 @@
     "personality": "농담을 잘한다",
     "short_self": "30대 공무원",
     "score": 2,
-    "lean": null
+    "lean": null,
+    "perspectives": [
+      "정숙 반전 예측"
+    ]
   },
   {
     "name": "호두",
@@ -60,6 +78,9 @@
     "personality": "한마디씩 툭 던진다",
     "short_self": "30대 회사원",
     "score": 2,
-    "lean": null
+    "lean": null,
+    "perspectives": [
+      "영호 어장 예측"
+    ]
   }
 ]
