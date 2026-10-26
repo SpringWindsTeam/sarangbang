@@ -4,6 +4,13 @@
 
 ## 미공개
 
+### 추가
+
+- **지식 베이스 문서**(`docs/knowledge-base/`): 주제 정보·쟁점 카드·시민·주제 문구를 어떻게 구성해야 대화가 잘 나오는지 — 원칙, 도메인별 대응표, 점검 목록, 자주 생기는 문제와 대응.
+- **예시 지식 베이스 7개**(`examples/knowledge-bases/`, 모두 가상 데이터)와 도구(`examples/kb_tools/`: validate · extract_digest · make_cards · run · export). `export`는 시나리오 파일로 내보내 `sarangbang run`으로 돌릴 수 있게 한다.
+- **실행 예제**(`docs/recipes/`): 시나리오 파일, 연애 예능 시청자 단톡방, Nemotron 시민, 모델 두 개, 플러그인.
+- README 머리에 데모 GIF(`assets/demo-chat.gif`).
+
 ## 0.2.0 — 2026-10-25
 
 첫 PyPI 배포 준비판. `pip install sarangbang` 뒤 `sarangbang quickstart --fake`로 바로 돌려 볼 수 있습니다.

@@ -1,0 +1,186 @@
+{
+  "c1": {
+    "id": "c1",
+    "name": "가격 부담",
+    "interest": "200만 원 가까운 값이 쓸 만큼의 차이인지",
+    "ask_form": "이 값이면 일반 폰 두 대 아닌가?",
+    "arg_types": [
+      "비용"
+    ],
+    "freq": 9,
+    "stance_lean": {
+      "lean": "반대"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c2": {
+    "id": "c2",
+    "name": "내구성",
+    "interest": "접히는 부분이 오래 버틸지",
+    "ask_form": "접는 부분은 몇 년 버티려나?",
+    "arg_types": [
+      "품질"
+    ],
+    "freq": 8,
+    "stance_lean": {
+      "lean": "조건부"
+    },
+    "premises": [
+      {
+        "premise": "이전 모델은 화면 보호막이 들뜨는 일이 있었다",
+        "scope": "이전 모델 사용자 일부",
+        "time": "작년"
+      }
+    ],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c3": {
+    "id": "c3",
+    "name": "무게 개선",
+    "interest": "가벼워져서 들고 다니기 나아졌는지",
+    "ask_form": "24g이면 체감되나?",
+    "perspective": "기존 사용자",
+    "require": [
+      "current_user"
+    ],
+    "arg_types": [
+      "편의"
+    ],
+    "freq": 6,
+    "stance_lean": {
+      "lean": "찬성"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "blog"
+      }
+    ]
+  },
+  "c4": {
+    "id": "c4",
+    "name": "보상 판매",
+    "interest": "쓰던 폰 반납 보상이 실제로 얼마나 되는지",
+    "ask_form": "내 폰은 보상 얼마 받으려나?",
+    "perspective": "기존 사용자",
+    "require": [
+      "current_user"
+    ],
+    "arg_types": [
+      "비용"
+    ],
+    "freq": 5,
+    "stance_lean": {
+      "lean": "중립"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c5": {
+    "id": "c5",
+    "name": "갈아타기",
+    "interest": "다른 회사 폰에서 옮기면 불편한 점",
+    "ask_form": "앱이랑 사진 옮기기 번거롭지 않나?",
+    "perspective": "경쟁 제품 사용자",
+    "require": [
+      "rival_user"
+    ],
+    "arg_types": [
+      "편의"
+    ],
+    "freq": 4,
+    "stance_lean": {
+      "lean": "조건부"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c6": {
+    "id": "c6",
+    "name": "큰 화면 쓰임새",
+    "interest": "펼친 화면으로 실제로 무엇을 하게 되는지",
+    "ask_form": "펼쳐서 뭐 제일 많이 하게 될까?",
+    "arg_types": [
+      "취향"
+    ],
+    "freq": 4,
+    "stance_lean": {
+      "lean": "찬성"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "blog"
+      }
+    ]
+  },
+  "c7": {
+    "id": "c7",
+    "name": "기다렸다 사기",
+    "interest": "출시 직후 사지 말고 값 내리기를 기다릴지",
+    "ask_form": "몇 달 기다리면 값 내리지 않을까?",
+    "arg_types": [
+      "비용"
+    ],
+    "freq": 3,
+    "stance_lean": {
+      "lean": "중립"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c8": {
+    "id": "c8",
+    "name": "케이스·액세서리",
+    "interest": "접이식이라 케이스 고르기가 까다로운지",
+    "ask_form": "케이스는 뭐 끼워야 하지?",
+    "arg_types": [
+      "편의"
+    ],
+    "freq": 2,
+    "stance_lean": {
+      "lean": "중립"
+    },
+    "premises": [
+      {
+        "premise": "접이식 폰 케이스는 접는 부분이 빨리 닳는다는 후기가 있다",
+        "scope": "후기 몇 건",
+        "time": "시기 미상"
+      }
+    ],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "blog"
+      }
+    ]
+  }
+}

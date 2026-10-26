@@ -1,0 +1,65 @@
+[
+  {
+    "name": "민트",
+    "me": "20대 후반 회사원, 연애 예능은 다 챙겨 본다",
+    "relation": "첫 회부터 상철·영숙 커플을 응원해 왔다",
+    "personality": "말이 짧고 확신에 차 있다",
+    "short_self": "20대 회사원",
+    "score": 3,
+    "lean": null
+  },
+  {
+    "name": "라떼",
+    "me": "20대 대학생",
+    "relation": "영숙은 결국 영호를 고를 거라고 본다",
+    "personality": "말을 툭툭 던진다",
+    "short_self": "20대 대학생",
+    "score": 2,
+    "lean": null
+  },
+  {
+    "name": "자두",
+    "me": "30대 초반 간호사, 다시보기로 몰아 본다",
+    "relation": "옥순이 상철 마음을 흔들 거라고 본다",
+    "personality": "리액션이 크다",
+    "short_self": "30대 간호사",
+    "score": 2,
+    "lean": null
+  },
+  {
+    "name": "쿠키",
+    "me": "20대 후반 마케터",
+    "relation": "예고편은 거의 다 낚시라고 생각한다",
+    "personality": "의심이 많다",
+    "short_self": "20대 마케터",
+    "score": 2,
+    "lean": null
+  },
+  {
+    "name": "모카",
+    "me": "40대 초반 자영업자",
+    "relation": "이번 기수는 최종 커플이 하나도 안 나올 거라고 본다",
+    "personality": "무뚝뚝하고 현실적이다",
+    "short_self": "40대 자영업",
+    "score": 1,
+    "lean": null
+  },
+  {
+    "name": "보리",
+    "me": "30대 초반 공무원, 소개팅을 자주 한다",
+    "relation": "정숙이 막판에 판을 뒤집을 거라고 본다",
+    "personality": "농담을 잘한다",
+    "short_self": "30대 공무원",
+    "score": 2,
+    "lean": null
+  },
+  {
+    "name": "호두",
+    "me": "30대 중반 회사원, 아내와 같이 본다",
+    "relation": "영호는 어장을 치는 중이라고 본다",
+    "personality": "한마디씩 툭 던진다",
+    "short_self": "30대 회사원",
+    "score": 2,
+    "lean": null
+  }
+]

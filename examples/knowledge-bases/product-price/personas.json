@@ -1,0 +1,104 @@
+[
+  {
+    "name": "지민",
+    "me": "20대 후반 회사원, 출퇴근길에 매일 음악을 듣는다",
+    "stage": "혼자 산다",
+    "relation": "개인 요금제를 4년째 쓴다",
+    "short_self": "20대 회사원 · 개인 요금제",
+    "situation": [
+      "subscriber"
+    ],
+    "perspectives": [
+      "음악 많이 듣는 이용자"
+    ],
+    "score": 3,
+    "lean": -0.3
+  },
+  {
+    "name": "수아",
+    "me": "20대 후반, 가족 요금제를 만들어 친구 셋과 나눠 낸다",
+    "stage": "혼자 산다",
+    "relation": "가족 요금제 관리자다",
+    "short_self": "20대 · 가족 요금제 관리",
+    "situation": [
+      "subscriber",
+      "family_plan"
+    ],
+    "perspectives": [
+      "가족 요금제 이용자"
+    ],
+    "score": 3,
+    "lean": -0.5
+  },
+  {
+    "name": "현우",
+    "me": "20대 대학원생",
+    "stage": "부모님과 산다",
+    "relation": "학생 요금제를 쓴다",
+    "short_self": "20대 대학원생 · 학생 요금제",
+    "situation": [
+      "subscriber",
+      "student"
+    ],
+    "perspectives": [
+      "학생"
+    ],
+    "score": 2,
+    "lean": null
+  },
+  {
+    "name": "도윤",
+    "me": "20대 후반 음향 엔지니어",
+    "stage": "혼자 산다",
+    "personality": "장비 얘기를 좋아한다",
+    "relation": "고음질 때문에 다른 서비스를 따로 쓰고 있었다",
+    "short_self": "20대 · 음향 엔지니어",
+    "situation": [
+      "subscriber"
+    ],
+    "perspectives": [
+      "음악 많이 듣는 이용자"
+    ],
+    "score": 2,
+    "lean": 0.5
+  },
+  {
+    "name": "서연",
+    "me": "20대 후반 회사원, 영상·음악·쇼핑 구독을 여러 개 쓴다",
+    "stage": "혼자 산다",
+    "relation": "수아의 가족 요금제를 나눠 쓴다",
+    "short_self": "20대 · 구독 여러 개",
+    "situation": [
+      "subscriber",
+      "family_plan"
+    ],
+    "score": 2,
+    "lean": -0.2
+  },
+  {
+    "name": "준호",
+    "me": "20대 후반, 음악은 무료 요금제로 듣는다",
+    "stage": "혼자 산다",
+    "relation": "유료 요금제는 안 쓴다",
+    "short_self": "20대 · 무료 이용",
+    "situation": [],
+    "score": 1,
+    "lean": null,
+    "affected": false
+  },
+  {
+    "name": "민지",
+    "me": "20대 후반 작곡가, 음원 수익을 받는다",
+    "stage": "혼자 산다",
+    "relation": "자기 곡이 하루뮤직에 올라가 있다",
+    "short_self": "20대 작곡가",
+    "situation": [
+      "subscriber"
+    ],
+    "perspectives": [
+      "창작자"
+    ],
+    "score": 2,
+    "lean": 0.2
+  }
+]

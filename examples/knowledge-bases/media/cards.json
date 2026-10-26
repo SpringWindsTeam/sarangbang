@@ -1,0 +1,185 @@
+{
+  "c1": {
+    "id": "c1",
+    "name": "결말 각색",
+    "interest": "원작과 다른 결말이 작품의 의미를 바꾸는지",
+    "ask_form": "결말 바꾸면 그 장면은 어떻게 되는 거지?",
+    "perspective": "원작 팬",
+    "require": [
+      "original_fan"
+    ],
+    "arg_types": [
+      "취향"
+    ],
+    "freq": 9,
+    "stance_lean": {
+      "lean": "반대"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c2": {
+    "id": "c2",
+    "name": "캐스팅 어울림",
+    "interest": "주연 배우가 원작 인물과 어울리는지",
+    "ask_form": "그 배우가 그 역할에 맞나?",
+    "arg_types": [
+      "취향"
+    ],
+    "freq": 8,
+    "stance_lean": {
+      "lean": "조건부"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c3": {
+    "id": "c3",
+    "name": "새 시청자 진입",
+    "interest": "원작을 안 본 사람도 따라갈 수 있는지",
+    "ask_form": "웹툰 안 봐도 이해되려나?",
+    "perspective": "일반 시청자",
+    "require": [
+      "casual_viewer"
+    ],
+    "arg_types": [
+      "편의"
+    ],
+    "freq": 5,
+    "stance_lean": {
+      "lean": "찬성"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "blog"
+      }
+    ]
+  },
+  "c4": {
+    "id": "c4",
+    "name": "작가 참여",
+    "interest": "원작 작가 자문이 실제로 원작을 지켜 줄지",
+    "ask_form": "작가가 자문하면 결말도 괜찮지 않을까?",
+    "perspective": "원작 팬",
+    "require": [
+      "original_fan"
+    ],
+    "arg_types": [
+      "신뢰"
+    ],
+    "freq": 4,
+    "stance_lean": {
+      "lean": "찬성"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c5": {
+    "id": "c5",
+    "name": "OTT 구독 부담",
+    "interest": "보려고 구독을 하나 더 해야 하는지",
+    "ask_form": "그거 보려고 또 구독해야 해?",
+    "perspective": "일반 시청자",
+    "arg_types": [
+      "비용"
+    ],
+    "freq": 4,
+    "stance_lean": {
+      "lean": "반대"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c6": {
+    "id": "c6",
+    "name": "이전 작품 드라마",
+    "interest": "같은 작가 이전 작품의 드라마 평가",
+    "ask_form": "전에 드라마 된 건 어땠더라?",
+    "arg_types": [
+      "근거"
+    ],
+    "freq": 3,
+    "stance_lean": {
+      "lean": "중립"
+    },
+    "premises": [
+      {
+        "premise": "작가의 이전 작품 드라마는 원작 팬 평가가 갈렸다",
+        "scope": "커뮤니티 반응",
+        "time": "3년 전"
+      }
+    ],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "blog"
+      }
+    ]
+  },
+  "c7": {
+    "id": "c7",
+    "name": "배우 팬 입장",
+    "interest": "좋아하는 배우가 맡아 반가운 마음",
+    "ask_form": "첫 드라마 주연이라 기대돼",
+    "perspective": "출연자 팬",
+    "require": [
+      "actor_fan"
+    ],
+    "arg_types": [
+      "취향"
+    ],
+    "freq": 3,
+    "stance_lean": {
+      "lean": "찬성"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c8": {
+    "id": "c8",
+    "name": "루머 확인",
+    "interest": "조연 교체 얘기가 사실인지",
+    "ask_form": "조연 바뀐다는 거 확인된 거야?",
+    "arg_types": [
+      "신뢰"
+    ],
+    "freq": 2,
+    "stance_lean": {
+      "lean": "중립"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  }
+}

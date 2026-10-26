@@ -1,0 +1,177 @@
+{
+  "c1": {
+    "id": "c1",
+    "name": "가족 요금 분담",
+    "interest": "가족 요금제를 나눠 내는 사람들끼리 다시 정산해야 하는 일",
+    "ask_form": "가족 요금 나눠 내는 거 다시 계산해야 하나?",
+    "perspective": "가족 요금제 이용자",
+    "require": [
+      "family_plan"
+    ],
+    "arg_types": [
+      "비용"
+    ],
+    "freq": 8,
+    "stance_lean": {
+      "lean": "반대"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c2": {
+    "id": "c2",
+    "name": "다른 서비스로 이동",
+    "interest": "다른 음악 서비스로 옮기면 플레이리스트를 가져갈 수 있는지",
+    "ask_form": "플레이리스트 옮기는 방법 있나?",
+    "arg_types": [
+      "편의"
+    ],
+    "freq": 7,
+    "stance_lean": {
+      "lean": "반대"
+    },
+    "premises": [
+      {
+        "premise": "다른 서비스는 가입 첫 석 달을 무료로 준다",
+        "scope": "한 서비스",
+        "time": "올해"
+      }
+    ],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c3": {
+    "id": "c3",
+    "name": "고음질 포함",
+    "interest": "고음질이 기본으로 들어가는 것이 값어치가 있는지",
+    "ask_form": "고음질 차이 실제로 느껴지나?",
+    "perspective": "음악 많이 듣는 이용자",
+    "arg_types": [
+      "가치"
+    ],
+    "freq": 5,
+    "stance_lean": {
+      "lean": "찬성"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "blog"
+      }
+    ]
+  },
+  "c4": {
+    "id": "c4",
+    "name": "학생 요금",
+    "interest": "학생 요금도 오르는 것",
+    "ask_form": "학생 인증 언제까지 유지되나?",
+    "perspective": "학생",
+    "require": [
+      "student"
+    ],
+    "arg_types": [
+      "비용"
+    ],
+    "freq": 4,
+    "stance_lean": {
+      "lean": "조건부"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c5": {
+    "id": "c5",
+    "name": "구독료 누적",
+    "interest": "여러 구독 서비스 요금이 한꺼번에 오르는 것",
+    "ask_form": "구독 몇 개 끊어야 하나 고민되네",
+    "arg_types": [
+      "비용"
+    ],
+    "freq": 6,
+    "stance_lean": {
+      "lean": "반대"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c6": {
+    "id": "c6",
+    "name": "무료 요금제 유지",
+    "interest": "광고 듣는 무료 요금제로 내려가도 쓸 만한지",
+    "ask_form": "무료로 바꾸면 광고 얼마나 나오나?",
+    "arg_types": [
+      "편의"
+    ],
+    "freq": 3,
+    "stance_lean": {
+      "lean": "중립"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c7": {
+    "id": "c7",
+    "name": "창작자 수익",
+    "interest": "인상분이 가수나 작곡가에게 돌아가는지",
+    "ask_form": "오른 만큼 가수들한테 더 가나?",
+    "arg_types": [
+      "공정"
+    ],
+    "freq": 2,
+    "stance_lean": {
+      "lean": "조건부"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "blog"
+      }
+    ]
+  },
+  "c8": {
+    "id": "c8",
+    "name": "연간 결제 할인",
+    "interest": "연간 결제로 실제 부담이 줄어드는지",
+    "ask_form": "연간 결제 나오면 그걸로 바꾸는 게 낫나?",
+    "arg_types": [
+      "비용"
+    ],
+    "freq": 2,
+    "stance_lean": {
+      "lean": "찬성"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  }
+}

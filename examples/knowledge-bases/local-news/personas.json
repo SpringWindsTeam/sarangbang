@@ -1,0 +1,130 @@
+[
+  {
+    "name": "망원",
+    "me": "40대 회사원, 퇴근이 늦어 밤에만 공영주차장에 차를 댄다",
+    "stage": "맞벌이 · 초등학생 자녀 하나",
+    "kids": "아들 하나(초4)",
+    "relation": "매일 밤 주차장에 차를 댄다",
+    "short_self": "40대 회사원 · 밤에만 주차",
+    "situation": [
+      "resident",
+      "car_owner"
+    ],
+    "perspectives": [
+      "이용 주민"
+    ],
+    "score": 3,
+    "lean": -0.5
+  },
+  {
+    "name": "합정",
+    "me": "50대, 주차장 맞은편에서 고깃집을 한다",
+    "stage": "부부가 함께 가게를 한다",
+    "living": "가게 손님 대부분이 저녁에 차를 끌고 온다",
+    "relation": "저녁 손님이 주차장을 쓴다",
+    "short_self": "50대 · 고깃집 운영",
+    "situation": [
+      "shop_owner"
+    ],
+    "perspectives": [
+      "상인"
+    ],
+    "score": 3,
+    "lean": -0.6,
+    "steady": true
+  },
+  {
+    "name": "서교",
+    "me": "30대 프리랜서, 차가 없고 골목 안쪽 빌라에 산다",
+    "stage": "혼자 산다",
+    "living": "집 앞 골목이 좁아 밤마다 차가 줄지어 선다",
+    "relation": "주차장은 안 쓰지만 골목 주차 때문에 불편하다",
+    "short_self": "30대 · 차 없음",
+    "situation": [
+      "resident"
+    ],
+    "perspectives": [
+      "차 없는 주민"
+    ],
+    "score": 2,
+    "lean": 0.3
+  },
+  {
+    "name": "성산",
+    "me": "70대, 은퇴했고 경차를 가끔 몬다",
+    "stage": "부부가 함께 산다 · 은퇴",
+    "relation": "주말 밤에 가끔 주차장을 쓴다",
+    "short_self": "70대 · 은퇴",
+    "situation": [
+      "resident",
+      "car_owner"
+    ],
+    "perspectives": [
+      "어르신"
+    ],
+    "score": 2,
+    "lean": -0.2,
+    "steady": true
+  },
+  {
+    "name": "연남",
+    "me": "30대 간호사, 교대 근무라 밤늦게 귀가한다",
+    "stage": "신혼 · 아이 없음",
+    "relation": "야간 근무 날 주차장을 쓴다",
+    "short_self": "30대 간호사 · 교대 근무",
+    "situation": [
+      "resident",
+      "car_owner"
+    ],
+    "perspectives": [
+      "이용 주민"
+    ],
+    "score": 3,
+    "lean": null
+  },
+  {
+    "name": "상암",
+    "me": "40대 주부, 차가 없다",
+    "stage": "아이 둘 · 외벌이",
+    "kids": "딸 둘(중1, 초5)",
+    "living": "아이들 학원 가는 길이 주차장 옆 골목이다",
+    "relation": "아이들이 밤에 주차장 옆 골목을 지나다닌다",
+    "short_self": "40대 · 아이 둘",
+    "situation": [
+      "resident"
+    ],
+    "perspectives": [
+      "차 없는 주민"
+    ],
+    "score": 2,
+    "lean": 0.2
+  },
+  {
+    "name": "신수",
+    "me": "20대 대학생, 부모님 차를 가끔 빌린다",
+    "stage": "부모님과 산다",
+    "relation": "가끔 밤에 주차장을 쓴다",
+    "short_self": "20대 대학생",
+    "situation": [
+      "resident"
+    ],
+    "score": 1,
+    "lean": null
+  },
+  {
+    "name": "공덕",
+    "me": "60대, 동네에서 오래 세탁소를 했다",
+    "stage": "혼자 산다",
+    "relation": "주차장과는 상관없지만 동네 일에 관심이 많다",
+    "short_self": "60대 · 세탁소",
+    "situation": [
+      "shop_owner"
+    ],
+    "perspectives": [
+      "상인"
+    ],
+    "score": 1,
+    "lean": 0.1,
+    "affected": false
+  }
+]

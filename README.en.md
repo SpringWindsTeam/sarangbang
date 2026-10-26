@@ -91,6 +91,11 @@ Each call must carry exactly the context we choose — no accumulated memory, no
 earlier messages and invented family members when fed long agent memories. The engine owns the transcript (`Room.msgs`) and
 re-renders it every call.
 
+## Guides
+
+- [Building a knowledge base](docs/knowledge-base) (Korean) — how to prepare facts, issue cards, and personas so conversations come out well; example knowledge bases in [`examples/knowledge-bases`](examples/knowledge-bases) and helper scripts in [`examples/kb_tools`](examples/kb_tools).
+- [Recipes](docs/recipes) (Korean) — short runnable examples: scenario files, a dating-show viewers' chat, Nemotron personas, two model lanes, prompt plugins.
+
 ## Contributing · Citation · License
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) (Korean). Prompt-wording changes need a before/after comparison under the same conditions.

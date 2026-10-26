@@ -1,0 +1,108 @@
+[
+  {
+    "name": "별빛",
+    "me": "20대 대학생, 웹툰을 매일 본다",
+    "stage": "자취한다",
+    "relation": "달빛 정류장을 연재 첫 회부터 봤다",
+    "values": "원작을 함부로 바꾸는 걸 싫어한다",
+    "short_self": "20대 대학생 · 원작 팬",
+    "situation": [
+      "original_fan"
+    ],
+    "perspectives": [
+      "원작 팬"
+    ],
+    "score": 3,
+    "lean": -0.6
+  },
+  {
+    "name": "새벽",
+    "me": "30대 회사원, 퇴근하고 드라마를 몰아 본다",
+    "stage": "혼자 산다",
+    "relation": "웹툰은 안 봤고 드라마로 처음 볼 생각이다",
+    "living": "OTT 하나만 구독한다",
+    "short_self": "30대 회사원",
+    "situation": [
+      "casual_viewer"
+    ],
+    "perspectives": [
+      "일반 시청자"
+    ],
+    "score": 2,
+    "lean": 0.3
+  },
+  {
+    "name": "노을",
+    "me": "20대 직장인",
+    "stage": "부모님과 산다",
+    "relation": "주연 배우 팬클럽 회원이다",
+    "short_self": "20대 · 배우 팬",
+    "situation": [
+      "actor_fan",
+      "casual_viewer"
+    ],
+    "perspectives": [
+      "출연자 팬"
+    ],
+    "score": 2,
+    "lean": 0.7
+  },
+  {
+    "name": "하람",
+    "me": "30대 웹소설 작가 지망생",
+    "stage": "혼자 산다",
+    "relation": "원작을 끝까지 봤고 결말 해석 글을 쓴 적이 있다",
+    "values": "각색 자체는 괜찮지만 이유가 있어야 한다",
+    "short_self": "30대 · 작가 지망생",
+    "situation": [
+      "original_fan"
+    ],
+    "perspectives": [
+      "원작 팬"
+    ],
+    "score": 3,
+    "lean": null
+  },
+  {
+    "name": "구름",
+    "me": "40대 주부, 드라마를 즐겨 본다",
+    "stage": "아이 둘",
+    "kids": "중2, 초6",
+    "relation": "딸이 원작 웹툰을 좋아해서 제목을 안다",
+    "short_self": "40대 · 드라마 시청자",
+    "situation": [
+      "casual_viewer"
+    ],
+    "perspectives": [
+      "일반 시청자"
+    ],
+    "score": 1,
+    "lean": 0.1
+  },
+  {
+    "name": "바람",
+    "me": "20대 대학원생, 영상 리뷰 채널을 한다",
+    "stage": "자취한다",
+    "relation": "같은 작가 이전 작품 드라마를 리뷰한 적이 있다",
+    "short_self": "20대 · 리뷰 채널",
+    "situation": [
+      "original_fan",
+      "casual_viewer"
+    ],
+    "score": 2,
+    "lean": -0.2
+  },
+  {
+    "name": "이슬",
+    "me": "30대 간호사, 드라마는 가끔 본다",
+    "stage": "신혼",
+    "relation": "이 작품은 처음 들었다",
+    "short_self": "30대 간호사",
+    "situation": [
+      "casual_viewer"
+    ],
+    "score": 0,
+    "lean": null,
+    "affected": false
+  }
+]

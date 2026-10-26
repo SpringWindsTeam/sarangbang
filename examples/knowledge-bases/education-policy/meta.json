@@ -1,0 +1,22 @@
+{
+  "title": "초등 돌봄 운영 시간 오후 8시까지 연장",
+  "target": {
+    "who": "초등학생 자녀를 둔 가정, 초등학교 교직원, 돌봄 전담사"
+  },
+  "topic": {
+    "base": "policy",
+    "noun": "정책",
+    "label": "[정책]",
+    "relation_label": "[이 정책과 나]",
+    "common_words": [
+      "돌봄",
+      "초등",
+      "연장",
+      "오후"
+    ]
+  },
+  "spec": "ko_s12",
+  "cards_per_person": 1,
+  "hearsay": true,
+  "fake_share": "초등 돌봄 저녁 8시까지 한다는 기사 보셨어요?"
+}

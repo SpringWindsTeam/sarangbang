@@ -1,0 +1,24 @@
+{
+  "title": "음악 구독 서비스 '하루뮤직' 요금 인상",
+  "target": {
+    "who": "하루뮤직 유료 이용자, 가족 요금제 이용자"
+  },
+  "topic": {
+    "base": "generic",
+    "noun": "요금 인상",
+    "label": "[서비스 소식]",
+    "relation_label": "[이 서비스와 나]",
+    "common_words": [
+      "하루뮤직",
+      "요금",
+      "인상",
+      "구독",
+      "음악"
+    ]
+  },
+  "spec": "ko_generic",
+  "cards_per_person": 1,
+  "hearsay": true,
+  "room_name": "대학 동기방",
+  "fake_share": "하루뮤직 다음 달부터 요금 오른다는 메일 왔어 ㅠ"
+}

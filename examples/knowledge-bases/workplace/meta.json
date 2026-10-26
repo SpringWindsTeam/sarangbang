@@ -1,0 +1,24 @@
+{
+  "title": "사내 주 4.5일제 시범 운영",
+  "target": {
+    "who": "주 4.5일제 시범 부서 직원, 시범에서 빠진 부서 직원"
+  },
+  "topic": {
+    "base": "generic",
+    "noun": "근무제 변경",
+    "label": "[회사 공지]",
+    "relation_label": "[이 공지와 나]",
+    "common_words": [
+      "회사",
+      "근무",
+      "금요일",
+      "시범",
+      "4.5일"
+    ]
+  },
+  "spec": "ko_generic",
+  "cards_per_person": 1,
+  "hearsay": true,
+  "room_name": "입사 동기방",
+  "fake_share": "공지 봤어? 다음 분기부터 금요일 오후 쉬는 거 시범으로 한대"
+}

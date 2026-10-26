@@ -1,0 +1,186 @@
+{
+  "c1": {
+    "id": "c1",
+    "name": "맞벌이 퇴근 시간",
+    "interest": "퇴근이 늦는 맞벌이 가정의 하교 공백",
+    "ask_form": "8시면 퇴근하고 데리러 갈 수 있으려나?",
+    "perspective": "학부모",
+    "require": [
+      "parent_young"
+    ],
+    "arg_types": [
+      "돌봄"
+    ],
+    "freq": 9,
+    "stance_lean": {
+      "lean": "찬성"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c2": {
+    "id": "c2",
+    "name": "아이 피로",
+    "interest": "아이가 학교에 12시간 가까이 있는 것",
+    "ask_form": "애가 너무 오래 학교에 있는 거 아닌가?",
+    "perspective": "학부모",
+    "require": [
+      "parent_young"
+    ],
+    "arg_types": [
+      "아동 건강"
+    ],
+    "freq": 7,
+    "stance_lean": {
+      "lean": "반대"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c3": {
+    "id": "c3",
+    "name": "저녁 인력 안전",
+    "interest": "새로 뽑는 시간제 인력이 아이를 잘 돌볼 수 있는지",
+    "ask_form": "저녁 인력은 어떤 사람을 뽑는 거지?",
+    "perspective": "학부모",
+    "arg_types": [
+      "안전"
+    ],
+    "freq": 6,
+    "stance_lean": {
+      "lean": "조건부"
+    },
+    "premises": [
+      {
+        "premise": "시범 학교 한 곳은 저녁 인력이 자주 바뀌었다",
+        "scope": "시범 학교 한 곳",
+        "time": "올해 2학기"
+      }
+    ],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c4": {
+    "id": "c4",
+    "name": "교직원 부담",
+    "interest": "늦게까지 학교 문을 열면 교직원 업무가 늘지",
+    "ask_form": "학교 문 닫는 건 결국 누가 하나?",
+    "perspective": "교직원",
+    "require": [
+      "school_staff"
+    ],
+    "arg_types": [
+      "업무 부담"
+    ],
+    "freq": 5,
+    "stance_lean": {
+      "lean": "반대"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "단체 성명",
+        "platform": "statement"
+      }
+    ]
+  },
+  "c5": {
+    "id": "c5",
+    "name": "학년 제한",
+    "interest": "3학년 이상은 대상이 아닌 것",
+    "ask_form": "3학년 되면 그냥 학원 보내라는 건가?",
+    "perspective": "학부모",
+    "require": [
+      "parent_young"
+    ],
+    "arg_types": [
+      "형평"
+    ],
+    "freq": 4,
+    "stance_lean": {
+      "lean": "조건부"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c6": {
+    "id": "c6",
+    "name": "저녁 도시락",
+    "interest": "저녁 도시락이 아이 식사로 충분한지",
+    "ask_form": "도시락 메뉴는 누가 정하나?",
+    "perspective": "학부모",
+    "arg_types": [
+      "아동 건강"
+    ],
+    "freq": 3,
+    "stance_lean": {
+      "lean": "중립"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c7": {
+    "id": "c7",
+    "name": "사교육 대체",
+    "interest": "저녁 돌봄이 학원 대신이 될 수 있는지",
+    "ask_form": "학원 하나는 줄일 수 있겠네",
+    "arg_types": [
+      "비용"
+    ],
+    "freq": 3,
+    "stance_lean": {
+      "lean": "찬성"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "blog"
+      }
+    ]
+  },
+  "c8": {
+    "id": "c8",
+    "name": "세금 사용",
+    "interest": "자녀 없는 가구도 내는 세금으로 운영하는 것",
+    "ask_form": "예산이 얼마나 드는 건지 궁금하네",
+    "arg_types": [
+      "재정"
+    ],
+    "freq": 2,
+    "stance_lean": {
+      "lean": "중립"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  }
+}

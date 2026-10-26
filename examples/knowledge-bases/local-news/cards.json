@@ -1,0 +1,190 @@
+{
+  "c1": {
+    "id": "c1",
+    "name": "야간 귀가 주차",
+    "interest": "늦게 퇴근해 밤에만 차를 대는 사람의 부담",
+    "ask_form": "정기권 40장이면 금방 동나지 않나?",
+    "perspective": "이용 주민",
+    "require": [
+      "car_owner"
+    ],
+    "arg_types": [
+      "비용"
+    ],
+    "freq": 9,
+    "stance_lean": {
+      "lean": "반대"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c2": {
+    "id": "c2",
+    "name": "골목 주차난",
+    "interest": "주차장에서 밀려난 차가 골목으로 몰릴지",
+    "ask_form": "골목에 차 더 늘어나는 거 아닌가?",
+    "perspective": "차 없는 주민",
+    "arg_types": [
+      "편의"
+    ],
+    "freq": 7,
+    "stance_lean": {
+      "lean": "반대"
+    },
+    "premises": [
+      {
+        "premise": "옆 동네는 유료화 뒤 골목 주차가 늘었다",
+        "scope": "옆 동네 한 곳",
+        "time": "작년"
+      }
+    ],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c3": {
+    "id": "c3",
+    "name": "장기 방치 차량",
+    "interest": "주차장을 며칠씩 차지하던 차가 빠질지",
+    "ask_form": "몇 주째 안 움직이는 차들 이제 빠지려나?",
+    "perspective": "이용 주민",
+    "arg_types": [
+      "공정"
+    ],
+    "freq": 6,
+    "stance_lean": {
+      "lean": "찬성"
+    },
+    "premises": [
+      {
+        "premise": "주차장 한 곳에 한 달 넘게 서 있는 차가 여러 대 있다",
+        "scope": "동네 주차장 한 곳",
+        "time": "올해"
+      }
+    ],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "blog"
+      }
+    ]
+  },
+  "c4": {
+    "id": "c4",
+    "name": "가게 손님 주차",
+    "interest": "저녁 장사 손님이 차를 댈 곳",
+    "ask_form": "저녁 손님들 주차비 부담되면 안 올 텐데?",
+    "perspective": "상인",
+    "require": [
+      "shop_owner"
+    ],
+    "arg_types": [
+      "비용"
+    ],
+    "freq": 5,
+    "stance_lean": {
+      "lean": "반대"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c5": {
+    "id": "c5",
+    "name": "야간 안전",
+    "interest": "밤에 주차장과 골목을 오가는 길의 안전",
+    "ask_form": "조명이랑 CCTV는 언제 바뀌나?",
+    "perspective": "이용 주민",
+    "arg_types": [
+      "안전"
+    ],
+    "freq": 4,
+    "stance_lean": {
+      "lean": "조건부"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c6": {
+    "id": "c6",
+    "name": "자리 찾기",
+    "interest": "밤늦게 와도 빈자리가 생길지",
+    "ask_form": "돈 받으면 오히려 자리 찾기는 쉬워지려나?",
+    "perspective": "이용 주민",
+    "require": [
+      "car_owner"
+    ],
+    "arg_types": [
+      "편의"
+    ],
+    "freq": 4,
+    "stance_lean": {
+      "lean": "찬성"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c7": {
+    "id": "c7",
+    "name": "요금 수입 사용처",
+    "interest": "걷은 요금이 실제로 어디에 쓰이는지",
+    "ask_form": "수입이 얼마나 되고 어디 쓰는지 공개하나?",
+    "arg_types": [
+      "신뢰"
+    ],
+    "freq": 3,
+    "stance_lean": {
+      "lean": "중립"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c8": {
+    "id": "c8",
+    "name": "정기권 공정성",
+    "interest": "선착순 정기권이 누구에게 돌아가는지",
+    "ask_form": "선착순이면 온라인 못 하는 어르신은 어떡하나?",
+    "perspective": "어르신",
+    "arg_types": [
+      "공정"
+    ],
+    "freq": 2,
+    "stance_lean": {
+      "lean": "조건부"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  }
+}

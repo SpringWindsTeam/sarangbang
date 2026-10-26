@@ -1,0 +1,24 @@
+{
+  "title": "공영주차장 야간 유료화",
+  "target": {
+    "who": "공영주차장 3곳 근처에 살거나 가게를 하는 사람, 밤에 주차장을 쓰는 사람"
+  },
+  "topic": {
+    "base": "generic",
+    "noun": "주차 요금 변경",
+    "label": "[동네 소식]",
+    "relation_label": "[이 일과 나]",
+    "common_words": [
+      "주차",
+      "주차장",
+      "요금",
+      "야간",
+      "유료"
+    ]
+  },
+  "spec": "ko_generic",
+  "cards_per_person": 1,
+  "hearsay": true,
+  "room_name": "망원동 이웃방",
+  "fake_share": "다음 달부터 공영주차장 밤에도 돈 받는대요. 구청 공지 떴네요"
+}

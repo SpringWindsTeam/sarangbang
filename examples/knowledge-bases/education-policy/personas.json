@@ -1,0 +1,103 @@
+[
+  {
+    "name": "분당",
+    "me": "30대 후반 회사원, 퇴근하면 7시가 넘는다",
+    "stage": "맞벌이",
+    "kids": "딸 하나(초1)",
+    "relation": "딸이 이 정책 대상 학년이다",
+    "short_self": "30대 맞벌이 · 초1 학부모",
+    "situation": [
+      "parent_young"
+    ],
+    "perspectives": [
+      "학부모"
+    ],
+    "score": 3,
+    "lean": 0.6
+  },
+  {
+    "name": "수지",
+    "me": "40대 초등학교 교사",
+    "stage": "아이 둘",
+    "kids": "중1, 초4",
+    "relation": "근무하는 학교가 대상 학교다",
+    "short_self": "40대 초등 교사",
+    "situation": [
+      "school_staff"
+    ],
+    "perspectives": [
+      "교직원"
+    ],
+    "score": 3,
+    "lean": -0.4,
+    "steady": true
+  },
+  {
+    "name": "광교",
+    "me": "30대 전업 주부",
+    "stage": "외벌이",
+    "kids": "아들 하나(초2)",
+    "relation": "아들이 대상 학년이지만 집에서 돌본다",
+    "short_self": "30대 · 초2 학부모",
+    "situation": [
+      "parent_young"
+    ],
+    "perspectives": [
+      "학부모"
+    ],
+    "score": 2,
+    "lean": -0.3
+  },
+  {
+    "name": "동탄",
+    "me": "40대 자영업자, 저녁까지 가게를 본다",
+    "stage": "맞벌이",
+    "kids": "딸 둘(초3, 초1)",
+    "relation": "작은딸은 대상이고 큰딸은 3학년이라 대상이 아니다",
+    "short_self": "40대 자영업 · 초3·초1 학부모",
+    "situation": [
+      "parent_young"
+    ],
+    "perspectives": [
+      "학부모"
+    ],
+    "score": 3,
+    "lean": 0.2
+  },
+  {
+    "name": "영통",
+    "me": "50대 초등학교 행정실 직원",
+    "stage": "자녀는 대학생",
+    "relation": "학교 시설 관리를 맡고 있다",
+    "short_self": "50대 학교 행정실",
+    "situation": [
+      "school_staff"
+    ],
+    "perspectives": [
+      "교직원"
+    ],
+    "score": 2,
+    "lean": -0.2
+  },
+  {
+    "name": "평촌",
+    "me": "60대, 손주 하교를 맡아 준다",
+    "stage": "자녀 부부와 따로 산다",
+    "relation": "초1 손주를 매일 오후에 데려온다",
+    "short_self": "60대 · 손주 돌봄",
+    "situation": [],
+    "score": 2,
+    "lean": 0.3
+  },
+  {
+    "name": "일산",
+    "me": "30대 회사원, 아이가 없다",
+    "stage": "신혼",
+    "relation": "아이는 없지만 세금이 어디 쓰이는지 관심이 있다",
+    "short_self": "30대 · 자녀 없음",
+    "situation": [],
+    "score": 0,
+    "lean": null,
+    "affected": false
+  }
+]

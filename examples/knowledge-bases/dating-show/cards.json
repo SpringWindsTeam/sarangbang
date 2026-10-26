@@ -1,0 +1,148 @@
+{
+  "c1": {
+    "id": "c1",
+    "name": "상철·영숙 찐사",
+    "interest": "첫인상부터 한 사람만 본 상철과 그걸 편하다고 한 영숙",
+    "ask_form": "이 정도면 둘이 찐사 아님?",
+    "arg_types": [
+      "커플 예측"
+    ],
+    "freq": 9,
+    "stance_lean": {
+      "lean": "찬성"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c2": {
+    "id": "c2",
+    "name": "영숙은 영호행",
+    "interest": "영숙의 마음이 영호 쪽으로 기우는지",
+    "ask_form": "영숙 결국 영호 고르는 거 아냐?",
+    "arg_types": [
+      "커플 예측"
+    ],
+    "freq": 8,
+    "stance_lean": {
+      "lean": "반대"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c3": {
+    "id": "c3",
+    "name": "옥순 변수",
+    "interest": "옥순이 상철에게 건넨 커피와 '내일 얘기하자'",
+    "ask_form": "옥순 커피 그거 플러팅 맞지?",
+    "arg_types": [
+      "커플 예측"
+    ],
+    "freq": 6,
+    "stance_lean": {
+      "lean": "조건부"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c4": {
+    "id": "c4",
+    "name": "예고편 낚시",
+    "interest": "예고편이 일부러 헷갈리게 편집됐는지",
+    "ask_form": "예고편 원래 낚시잖아",
+    "arg_types": [
+      "편집"
+    ],
+    "freq": 6,
+    "stance_lean": {
+      "lean": "중립"
+    },
+    "premises": [
+      {
+        "premise": "지난 시즌에도 예고편과 실제 방송 분위기가 달랐다",
+        "scope": "시청자 커뮤니티 얘기",
+        "time": "지난 시즌"
+      }
+    ],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c5": {
+    "id": "c5",
+    "name": "영호 어장",
+    "interest": "영호가 정숙·옥순과 동시에 대화하는 게 어장인지",
+    "ask_form": "영호 지금 어장 치는 거지?",
+    "arg_types": [
+      "커플 예측"
+    ],
+    "freq": 5,
+    "stance_lean": {
+      "lean": "반대"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c6": {
+    "id": "c6",
+    "name": "최종 커플 0쌍",
+    "interest": "이번 기수는 최종 커플이 하나도 안 나올지",
+    "ask_form": "이러다 최종 0쌍 나오는 거 아냐?",
+    "arg_types": [
+      "커플 예측"
+    ],
+    "freq": 4,
+    "stance_lean": {
+      "lean": "반대"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c7": {
+    "id": "c7",
+    "name": "정숙 다크호스",
+    "interest": "마음 정한 사람 없다던 정숙이 판을 바꿀지",
+    "ask_form": "정숙이 제일 무서운 거 아님?",
+    "arg_types": [
+      "커플 예측"
+    ],
+    "freq": 3,
+    "stance_lean": {
+      "lean": "조건부"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  }
+}

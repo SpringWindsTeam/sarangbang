@@ -1,0 +1,117 @@
+[
+  {
+    "name": "김대리",
+    "me": "30대 초반 개발자",
+    "stage": "맞벌이 · 어린이집 다니는 아이 하나",
+    "kids": "딸 하나(5세)",
+    "relation": "개발 부서라 시범 대상이다",
+    "short_self": "30대 개발자 · 시범 부서",
+    "situation": [
+      "pilot_team",
+      "parent"
+    ],
+    "perspectives": [
+      "시범 부서",
+      "부모"
+    ],
+    "score": 3,
+    "lean": 0.6
+  },
+  {
+    "name": "박주임",
+    "me": "20대 후반 고객 응대 상담원",
+    "stage": "혼자 산다",
+    "relation": "고객 응대 부서라 시범에서 빠졌다",
+    "short_self": "20대 상담원 · 시범 제외",
+    "situation": [
+      "excluded_team"
+    ],
+    "perspectives": [
+      "제외 부서"
+    ],
+    "score": 3,
+    "lean": -0.6,
+    "steady": true
+  },
+  {
+    "name": "이과장",
+    "me": "30대 후반 기획자, 팀 일정을 관리한다",
+    "stage": "아이 둘",
+    "kids": "아들 둘(초2, 6세)",
+    "relation": "기획 부서라 시범 대상이고 팀 성과를 책임진다",
+    "short_self": "30대 기획 과장",
+    "situation": [
+      "pilot_team",
+      "parent"
+    ],
+    "perspectives": [
+      "시범 부서"
+    ],
+    "score": 3,
+    "lean": 0.1
+  },
+  {
+    "name": "최사원",
+    "me": "20대 물류 담당",
+    "stage": "부모님과 산다",
+    "relation": "물류 부서라 시범에서 빠졌다",
+    "short_self": "20대 · 물류",
+    "situation": [
+      "excluded_team"
+    ],
+    "perspectives": [
+      "제외 부서"
+    ],
+    "score": 2,
+    "lean": -0.3
+  },
+  {
+    "name": "정대리",
+    "me": "30대 디자이너",
+    "stage": "혼자 산다",
+    "personality": "운동을 좋아한다",
+    "relation": "디자인 부서라 시범 대상이다",
+    "short_self": "30대 디자이너",
+    "situation": [
+      "pilot_team"
+    ],
+    "perspectives": [
+      "시범 부서"
+    ],
+    "score": 2,
+    "lean": 0.4
+  },
+  {
+    "name": "한주임",
+    "me": "20대 후반 영업 담당, 고객사와 금요일 미팅이 잦다",
+    "stage": "혼자 산다",
+    "relation": "영업은 이번 시범 부서 명단에 없다",
+    "short_self": "20대 · 영업",
+    "situation": [
+      "excluded_team"
+    ],
+    "perspectives": [
+      "제외 부서"
+    ],
+    "score": 2,
+    "lean": null
+  },
+  {
+    "name": "윤과장",
+    "me": "40대 생산 관리자",
+    "stage": "아이 셋",
+    "kids": "고1, 중2, 초5",
+    "relation": "생산 부서라 시범에서 빠졌다",
+    "short_self": "40대 생산 관리",
+    "situation": [
+      "excluded_team",
+      "parent"
+    ],
+    "perspectives": [
+      "제외 부서"
+    ],
+    "score": 2,
+    "lean": -0.1,
+    "steady": true
+  }
+]

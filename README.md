@@ -48,6 +48,7 @@ LG AI Research의 [EXAONE](https://huggingface.co/LGAI-EXAONE)과 SK텔레콤의
 - [동작 방식](#동작-방식)
 - [핵심 개념](#핵심-개념)
 - [시나리오 파일](#시나리오-파일)
+- [지식 베이스 만들기와 실행 예제](#지식-베이스-만들기와-실행-예제)
 - [명령줄 도구](#명령줄-도구)
 - [프롬프트 설정 JSON](#프롬프트-설정-json)
 - [주제 설정 (Topic)](#주제-설정-topic)
@@ -281,6 +282,13 @@ sarangbang run examples/cafe_price.json --provider ollama --model exaone3.5:7.8b
 
 `--out`으로 저장한 JSON에는 메시지(`messages`)와 호출 기록(`calls` — 레인·지연·원본 응답·정리 내역)이 들어갑니다.
 시민 레코드가 `DictAdapter` 형식이 아니면(예: Nemotron 행) `S.prepare(d, adapter=NemotronKoreaAdapter())`처럼 어댑터를 넘깁니다.
+
+## 지식 베이스 만들기와 실행 예제
+
+시민에게 넣는 재료(주제 정보·쟁점 카드·시민 정보)는 시민이 무엇을 알고 어디서 이야기를 시작하는지를 정하고, 대화는 그 위에서 모델이 만들어 갑니다.
+
+- **[지식 베이스 만들기](docs/knowledge-base)** — 재료를 어떻게 구성해야 대화가 잘 나오는지: 사실과 의견을 나누는 법, 카드 다양성, 시민 구성, 자주 생기는 문제와 대응. 정책·신제품·미디어·회사 공지 등 [예시 지식 베이스 7개](examples/knowledge-bases)와 점검·추출 도구([`examples/kb_tools`](examples/kb_tools))가 함께 있습니다.
+- **[실행 예제](docs/recipes)** — 기능 하나씩 바로 돌려 보는 짧은 예제: 시나리오 파일 실행, 연애 예능 시청자 단톡방, 공개 데이터셋으로 시민 뽑기, 모델 두 개로 나눠 말하기, 플러그인.
 
 ## 명령줄 도구
 
@@ -648,8 +656,12 @@ src/sarangbang/
 ├── specs/         ko_generic.json · ko_s12.json
 └── data/          toy_library.json (내장 시나리오)
 docs/              korean-ai-providers.md (국산 AI 가이드) · release.md (배포 절차)
-assets/            logo.svg (아이콘)
+├── knowledge-base/  지식 베이스 만들기 (방법론 6편)
+└── recipes/         실행 예제 5편
+assets/            logo.svg (아이콘) · demo-chat.gif (README 데모)
 examples/          quickstart.py · nemotron_korea.py · cafe_price.json
+├── knowledge-bases/ 예시 지식 베이스 7개
+└── kb_tools/        점검·추출·실행·내보내기 도구
 tests/             pytest (네트워크 없음)
 .github/           CI · 릴리스 워크플로 · 이슈/PR 템플릿
 ```

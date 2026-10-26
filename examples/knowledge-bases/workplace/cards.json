@@ -1,0 +1,192 @@
+{
+  "c1": {
+    "id": "c1",
+    "name": "제외 부서 형평성",
+    "interest": "같은 회사인데 부서마다 쉬는 시간이 다른 것",
+    "ask_form": "반차 한 달 한 번이면 차이가 너무 크지 않나?",
+    "perspective": "제외 부서",
+    "require": [
+      "excluded_team"
+    ],
+    "arg_types": [
+      "공정"
+    ],
+    "freq": 9,
+    "stance_lean": {
+      "lean": "반대"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c2": {
+    "id": "c2",
+    "name": "업무 몰림",
+    "interest": "금요일 오전과 목요일에 일이 몰릴지",
+    "ask_form": "금요일 오전에 일 다 몰리는 거 아냐?",
+    "perspective": "시범 부서",
+    "require": [
+      "pilot_team"
+    ],
+    "arg_types": [
+      "시간"
+    ],
+    "freq": 7,
+    "stance_lean": {
+      "lean": "조건부"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c3": {
+    "id": "c3",
+    "name": "가족 시간",
+    "interest": "금요일 오후에 아이를 직접 데리러 갈 수 있는 것",
+    "ask_form": "금요일엔 애 하원 내가 할 수 있겠다",
+    "perspective": "부모",
+    "require": [
+      "parent"
+    ],
+    "arg_types": [
+      "생활"
+    ],
+    "freq": 6,
+    "stance_lean": {
+      "lean": "찬성"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c4": {
+    "id": "c4",
+    "name": "협업 공백",
+    "interest": "금요일 오후에 다른 부서가 연락이 안 되는 것",
+    "ask_form": "금요일 오후에 급한 건 생기면 누구한테 연락하지?",
+    "perspective": "제외 부서",
+    "require": [
+      "excluded_team"
+    ],
+    "arg_types": [
+      "업무"
+    ],
+    "freq": 5,
+    "stance_lean": {
+      "lean": "조건부"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c5": {
+    "id": "c5",
+    "name": "평가 불이익",
+    "interest": "시범 결과가 나쁘면 시범 부서 평가에 영향이 있는지",
+    "ask_form": "성과 떨어지면 평가에 반영되나?",
+    "perspective": "시범 부서",
+    "require": [
+      "pilot_team"
+    ],
+    "arg_types": [
+      "신뢰"
+    ],
+    "freq": 4,
+    "stance_lean": {
+      "lean": "중립"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c6": {
+    "id": "c6",
+    "name": "다른 회사 사례",
+    "interest": "다른 회사들도 이런 제도를 하는지",
+    "ask_form": "다른 데는 해 보고 어땠대?",
+    "arg_types": [
+      "근거"
+    ],
+    "freq": 3,
+    "stance_lean": {
+      "lean": "찬성"
+    },
+    "premises": [
+      {
+        "premise": "어느 회사는 금요일 오후 휴무 뒤 이직률이 줄었다",
+        "scope": "회사 한 곳",
+        "time": "시기 미상"
+      }
+    ],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "blog"
+      }
+    ]
+  },
+  "c7": {
+    "id": "c7",
+    "name": "고객 응대 교대",
+    "interest": "고객 응대 부서 교대 시범이 실제로 될지",
+    "ask_form": "교대 시범은 언제부터인지 나왔어?",
+    "perspective": "제외 부서",
+    "require": [
+      "excluded_team"
+    ],
+    "arg_types": [
+      "공정"
+    ],
+    "freq": 3,
+    "stance_lean": {
+      "lean": "조건부"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  },
+  "c8": {
+    "id": "c8",
+    "name": "자기 계발",
+    "interest": "늘어난 시간을 공부나 운동에 쓸 수 있는 것",
+    "ask_form": "금요일 오후에 운동 다니면 딱이겠다",
+    "arg_types": [
+      "생활"
+    ],
+    "freq": 2,
+    "stance_lean": {
+      "lean": "찬성"
+    },
+    "premises": [],
+    "sources": [
+      {
+        "kind": "시민 의견",
+        "platform": "cafe"
+      }
+    ]
+  }
+}
